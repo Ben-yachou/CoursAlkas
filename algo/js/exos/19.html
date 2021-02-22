@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Exercice 19</title>
+</head>
+
+<body>
+    Objectif :
+    Inverser une phrase 
+    Hello World! => !dlorW olleH
+    <script>
+        let phrase = prompt("Entrez une phrase")
+        //on se crée une string vide
+        let inverse = ""
+        //on parcourt la string originelle à l'envers
+        for (let i = phrase.length - 1; i >= 0; i--){
+            //et on ajoute chaque caractère lu à l'envers dans la string vide
+            inverse += phrase[i]
+        }
+        //on affiche la string inversée ainsi reconstruite
+        console.log(inverse)
+
+        //ou alors 
+        console.log(phrase.split("").reverse().join(""))
+    </script>
+</body>
+
+</html>

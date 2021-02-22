@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Exercice 10</title>
+</head>
+
+<body>
+    Objectif : 
+    A partir d'un tableau de nombre aléatoires dont la taille est définie par l'utilisateur, afficher le tableau ainsi que le plus grand nombre qu'il contienne. 
+    <script>
+        //renvoie un nombre aléatoire entre 1 et 100 
+        function getRandNum(){
+            return Math.floor(Math.random() * 100 + 1)
+        }
+        //génération d'un tableau aléatoire 
+        let taille = Number(prompt("Entrez la taille du tableau"))
+        let nombres = []
+        for (let i = 0; i < taille; i++){
+            nombres.push(getRandNum())
+        }
+        console.log(nombres)
+
+        //suite de l'exercice : 
+        //on part du principe que notre première valeur est la plus grande jamais vue (parce que c'est le cas)
+        let max = nombres[0]
+        //on parcourt notre tableau 
+        for (let i = 1; i < nombres.length; i++) {
+            //si on trouve un nombre plus grand que notre maximum
+            if (nombres[i] > max){
+                //on l'enregistre en tant que nouveau maximum
+                max = nombres[i]
+            }
+        }
+        console.log('Le maximum est : ', max)
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Exercice 12</title>
+</head>
+
+<body>
+    Objectif : 
+    Parcourir un tableau de valeurs aléatoires de températures en Fahrenheit et les convertir en degrés Celsius
+    formule : (T°F - 32 ) * 5/9 = T°C
+    <script>
+        //renvoie un nombre aléatoire entre 1 et 100 
+        function getRandNum(){
+            return Math.floor(Math.random() * 100 + 1)
+        }
+        //génération d'un tableau aléatoire 
+        let taille = Number(prompt("Entrez la taille du tableau"))
+        let nombres = []
+        for (let i = 0; i < taille; i++){
+            nombres.push(getRandNum())
+        }
+        console.log(nombres)
+
+        //suite de l'exercice : 
+        //pour chaque valeur de notre tableau nombres
+        for (let i = 0; i < nombres.length; i++) {
+            //on effectue la conversion 
+            let f = (nombres[i] - 32) * 5/9
+            //et on affiche le résultat
+            console.log(f)
+        }
+</script>
+</body>
+
+</html>

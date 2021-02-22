@@ -1,0 +1,209 @@
+.main-container{
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+
+.main-header {
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo svg {
+    height: 2em;
+    width: auto;
+}
+
+
+.links {
+    font-size: 0.8em;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+}
+
+.blog-nav .links {
+    width: 100%;
+    padding-right: 5em;
+}
+
+.blog-nav .links li:nth-child(1){
+    margin-left: 2em;
+    flex-grow: 1;
+} 
+
+.links li {
+    margin: 5px;
+}
+
+a {
+    height: 2em;
+    line-height: 2em;
+    padding: 5px 15px;
+    font-size: 0.8em;
+    border-radius: 100px;
+    background-color: transparent; 
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+a:hover{
+    background-color: rgb(224, 224, 224);
+}
+
+.blog-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f6f6f8;
+}
+
+.blog-image {
+    border-radius: 5px;
+    width: 98%;
+    height: 300px;
+    background-image: url('./eduardo-filgueiras.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+article {
+    background-color: white;
+}
+.article-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main p {
+    font-size: 0.8em;
+}
+
+main > * {
+    margin: 15px 0;
+    width: 60%;
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+}
+
+.article-author {
+    font-size: 0.7em;
+}
+
+
+.article-date {
+    font-size: 0.6em;
+    color: #a3a5cc;
+}
+
+.article-cta {
+    text-transform: uppercase;
+    font-size: 0.8em;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3rem;
+    color: white;
+    background-color: #2f1a37;
+}
+
+.cta-link {
+    background-color: #e1567c; 
+    color: white;
+}
+
+.cta-link:hover {
+    background-color: #a5415b; 
+}
+
+.article-footer {
+    background-color: white;
+    display: flex;
+}
+
+.article-footer > div {
+    width: 50%;
+}
+
+.article-footer > div:last-child{
+    padding-left: 20px;
+    border-left: 1px solid rgb(231, 231, 231);
+}
+
+.article-footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.article-footer li {
+    margin: 8px 0;
+}
+
+.article-footer span {
+    font-size: 0.76em;
+    color: #a3a5cc;
+}
+
+footer a {
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: #e1567c;
+}
+
+.main-footer {
+    margin: 0 auto;
+    width: 80%;
+    background-color: white;   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-footer .top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-footer .col {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-footer .col ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.main-footer .bottom {
+    display: flex;
+    justify-content: center;
+}
+
+.main-footer .bottom svg {
+    width: 100%;
+    color: whitesmoke;
+}
+
+.footer-line {
+    color: orange;
+    transform: rotate(2deg);
+}

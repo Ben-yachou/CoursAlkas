@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Exercice 3</title>
+</head>
+
+<body>
+    Objectif: Demander un prix HT d'un article à l'unité,
+    demander une quantité du dit article,
+    et demander le taux de TVA,
+    pour renvoyer le total TTC.
+    <script>
+        let prixHT = Number(prompt("Entrez le prix à l'unité HT"))
+        let quantite = Number(prompt("Entrez la quantité de produit"))
+        let tva = Number(prompt("Entrez le taux de TVA"))
+        let prixTTC = prixHT * quantite * (1+(tva/100))
+        console.log(prixTTC)
+    </script>
+</body>
+
+</html>

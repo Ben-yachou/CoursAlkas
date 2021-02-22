@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{parent()}} Profile {% endblock %}
+
+{% block body %}
+
+<div class="row mt-3 mb-3">
+    <div class="col">
+        <h2>Your Profile</h2>
+    </div>
+    <div class="col">
+
+        <img class="profile-pic" src="{{asset(user_profile_pictures_dir ~ app.user.picture)}}"
+            alt="Your profile picture">
+    </div>
+</div>
+
+{% include "profile/_article_history.html.twig" with {'articles' : app.user.articles} %}
+
+<div class="mt-3 mb-3">
+    <div class="btn-group">
+        <a class="btn btn-outline-primary" href="{{ path('profile_picture_modify') }}">Modify picture</a>
+        <a class="btn btn-outline-primary" href="{{ path('profile_password_modify') }}">Modify Password</a>
+    </div>
+</div>
+{% endblock %}

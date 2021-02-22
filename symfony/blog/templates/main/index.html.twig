@@ -1,0 +1,19 @@
+{# on peut hériter d'un template avec extends #}
+{% extends 'base.html.twig' %}
+
+{# en déclarant un block on peut hériter d'un bloc du template parent ou en déclarer un pour un éventuel template enfant
+
+si on hérite d'un bloc on remplace tout son contenu
+#}
+{% block title %}
+{# parent() permet de récupérer le contenu du bloc dans le template dont on hérite #}
+{{parent()}}
+Index
+{% endblock %}
+
+
+{% block body %}
+{% for article in articles %}
+{% include "main/_article.html.twig"%}
+{% endfor %}
+{% endblock %}

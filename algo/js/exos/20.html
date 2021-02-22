@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Exercice 20</title>
+</head>
+
+<body>
+    Objectif :
+    Retirer les accents des caractères d'une phrase 
+    à l'aide => a l'aide
+    j'étais coincé => j'etais coince
+
+    accents à remplacer : éèêàçùûîïô
+    <script>
+        let phrase = prompt("Entrez une phrase")
+        let phraseSansAccent = ""
+        
+        for (let i = 0; i < phrase.length; i++){
+            if (phrase[i] === "é" ||  phrase[i] === "è" || phrase[i] === "ê" ) {
+                phraseSansAccent += "e"
+            } else if (phrase[i] === "à") {
+                phraseSansAccent += "a"
+            } else if (phrase[i] === "ç") {
+                phraseSansAccent += "c"
+            } else if (phrase[i] === "ù" || phrase[i] === "û") {
+                phraseSansAccent += "u"
+            }else if (phrase[i] === "î" || phrase[i] === "ï") {
+                phraseSansAccent += "i"
+            }else if (phrase[i] === "ô") {
+                phraseSansAccent += "o"
+            } else {
+                phraseSansAccent += phrase[i]
+            }
+        }
+        
+        
+        console.log(phraseSansAccent)
+
+        //on transforme notre chaine de caractère en caractères unicodes décomposés, c'est à dire que les accents sont séparés des caractères non accentués grâce des symboles diacritiques https://en.wikipedia.org/wiki/Combining_Diacritical_Marks
+        //on remplace ensuite ces symboles diacritiques par des chaines vides à l'aide de replace() pour effectivement supprimer les accents
+        //ces symboles étant tous stockés côte à côte dans la table unicode, on peut dire qu'on remplace tous les caractères contenus entre le u0300 et le u036f par une chaine vide à l'aide d'une regex https://fr.wikipedia.org/wiki/Expression_r%C3%A9guli%C3%A8re
+        //l'avantage d'utiliser une méthode aussi sophistiquée est que tous les accents seront supprimés, pas que ceux que l'on connaît ou dont on se souvient 
+        console.log(phrase.normalize("NFD").replace(/[\u0300-\u036f]/g, ""))
+    </script>
+</body>
+
+</html>

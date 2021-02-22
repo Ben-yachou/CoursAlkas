@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Exercice 17</title>
+</head>
+
+<body>
+    Objectif :
+    Afficher tous les nombres premiers contenus dans le tableau aléatoire. 
+    Un nombre premier est un nombre qui n'est divisible QUE par 1 et lui même. 
+    <script>
+        //renvoie un nombre aléatoire entre 1 et 100 
+        function getRandNum(){
+            return Math.floor(Math.random() * 100 + 1)
+        }
+        //génération d'un tableau aléatoire 
+        let taille = Number(prompt("Entrez la taille du tableau"))
+        let nombres = []
+        for (let i = 0; i < taille; i++){
+            nombres.push(getRandNum())
+        }
+        console.log(nombres)
+
+        //suite de l'exercice :
+        //on parcourt le tableau 
+        for (let i = 0; i < nombres.length; i++){
+            //pour chaque nombre du tableau, on parcourt 
+            //tous les nombres compris entre 2 et ce nombre
+            //on part du postulat que notre nombre est premier
+            let premier = true
+            //si on tombe sur 0 ou 1 on invalide notre postulat
+            if (nombres[i] === 0 || nombres[i] === 1){
+                premier = false
+            }
+            //on peut s'arrêter à sqrt(nombres[i])
+            //car les deux facteurs potentiels de nombres[i] ne peuvent être supérieurs à sqrt(nombres[i]) à la fois, vu que sqrt(nombres[i])² === nombres[i]
+            for (let j = 2; j <= Math.sqrt(nombres[i]); j++){
+                //on teste chaque diviseur potentiel
+                if (nombres[i]%j === 0){
+                    //si un s'avère être diviseur, on invalide notre postulat de départ
+                    premier = false
+                    break //inutile de continuer à chercher
+                }
+            }
+            if (premier){
+                //on affiche un message de confirmation si notre postulat n'a pas été invalidé
+                console.log(nombres[i], "est premier")
+            }
+        }
+
+
+        //autre méthode possible 
+        //on écrit une fonction, estPremier, qui renvoie true ou false selon si un nombre passé en paramètre est premier ou non
+        //la fonction n'est exécutée qu'au moment de son appel
+        function estPremier(num){
+            if (num === 0 || num === 1) {
+                return false //return arrête l'exécution de la fonction
+            }
+
+            for (let i = 2; i <= Math.sqrt(num); i++){
+                if (num % i === 0) {
+                    return false
+                }
+            }
+            //si on a trouvé aucun diviseur on renvoie qu'il est premier
+            return true
+        }
+
+        for (let i = 0; i < nombres.length; i++){
+            //on appelle notre fonction estPremier pour nous dire si notre nombre est premier ou non 
+            if (estPremier(nombres[i])){
+                console.log(nombres[i], "est premier")
+            }
+        }
+</script>
+</body>
+
+</html>

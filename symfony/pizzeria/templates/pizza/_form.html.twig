@@ -1,0 +1,46 @@
+{{ form_start(form) }}
+{{ form_row(form.name) }}
+{{ form_row(form.price) }}
+{{ form_row(form.photoFile) }}
+{{ form_row(form.base) }}
+<div id="ingredient_fields">
+    {% for ingredientField in form.ingredients %}
+    {{form_row(ingredientField)}}
+    {% endfor %}
+</div>
+<button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+
+<button id="add_ingredient">
+    +
+</button>
+
+<script type="application/javascript">
+    //on récupère notre bouton
+    let addIngredient = document.getElementById('add_ingredient');
+
+    //eventlistener du clic sur bouton
+    addIngredient.addEventListener('click', () => {
+        //on récupère la div contenant le prototype des ingredients
+        let pizzaIngredients = document.getElementById('pizza_ingredients');
+        //on récupère le prototype (l'html) de notre champ d'ingredient
+        let prototype = pizzaIngredients.getAttribute('data-prototype');
+
+        //on récupère le compte d'ingrédients déjà présents
+        let ingredientFields = document.getElementById('ingredient_fields');
+        let ingredientCount = ingredientFields.childElementCount;
+        //on remplace chaque __name__ par le numéro correspondant au compte d'ingrédients
+        prototype = prototype.replace(/__name__/g, ingredientCount);
+        //on remplace les "0label__" par "Ingredient 1" par exemple 
+        prototype = prototype.replace(/\d+label__/g, `Ingredient ${ingredientCount + 1}`);
+
+        //on transforme le texte en éléments DU DOM pour pouvoir les insérer
+        //comme DOMParser crée un document en entier, on utilise .body.firstChild pour récuperer uniquement l'élément qui nous interesse
+        let ingredientField = new DOMParser().parseFromString(prototype, 'text/html').body.firstChild;
+
+        ingredientFields.appendChild(ingredientField);
+
+        console.log(prototype)
+        console.log(ingredientField)
+    })
+</script>

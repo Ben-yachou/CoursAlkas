@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Evenements clavier</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='clavier.css'>
+    <script src='clavier.js'></script>
+</head>
+
+<body>
+    <!-- un label est une étiquette utilisée pour illustrer le rôle d'un champ input, l'attribut "for" permet de déterminer l'id de l'input concerné -->
+    <label for="usernameInput">
+        Username
+    </label>
+    <!-- un champ input permet de récupérer une donnée venant de l'utilisateur, il peut être de différents types, type="text" signifie que ce sera un simple champ texte-->
+    <input id="usernameInput" type="text">
+    <label for="passwordInput">
+        Password
+    </label>
+    <!-- le type="password" permet de masquer les caractères inscrits dans le champ texte-->
+    <input id="passwordInput" type="password">
+    <img id="eye" src="eye-slash-solid.svg">
+    <button id="submit">Ok</button>
+
+    <span id="textToModify"></span>
+</body>
+
+</html>

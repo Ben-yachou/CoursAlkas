@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Exercice 15</title>
+</head>
+
+<body>
+    Objectif :
+    Détecter une valeur dans un tableau.  
+    Afficher true si une valeur demandée à l'utilisateur se trouve dans un tableau aléatoire, sinon afficher false
+    <script>
+        //renvoie un nombre aléatoire entre 1 et 100 
+        function getRandNum(){
+            return Math.floor(Math.random() * 100 + 1)
+        }
+        //génération d'un tableau aléatoire 
+        let taille = Number(prompt("Entrez la taille du tableau"))
+        let nombres = []
+        for (let i = 0; i < taille; i++){
+            nombres.push(getRandNum())
+        }
+        console.log(nombres)
+
+        //suite de l'exercice : 
+        let aChercher = Number(prompt('Entrez la valeur à chercher'))
+        //on part avec une valeur à false représentant l'état de notre recherche (false = rien trouvé)
+        let trouve = false
+        //on parcourt notre talbeau
+        for (let i = 0; i < nombres.length; i++){
+            //si un des éléments du tableau correspond à notre recherche
+            if (aChercher === nombres[i]){
+                //on considère la recherche comme fructueuse
+                trouve = true
+                //et on arrête l'exécution de la boucle 
+                //à l'aide du mot clé break  
+                break
+                //cette interruption de boucle permet d'optimiser notre algorithme en ne cherchant pas inutilement après avoir déjà trouvé
+            }
+        }
+        //à la fin on affiche le résultat
+        console.log(trouve)
+</script>
+</body>
+
+</html>

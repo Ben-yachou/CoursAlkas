@@ -1,0 +1,12 @@
+.nav-link img {
+    height: 1em;
+    display: inline;
+}
+
+.dropdown-menu a.danger {
+    color: var(--bs-red);
+}
+
+.article.card {
+    margin: 1em 0;
+}

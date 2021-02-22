@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+{{parent()}}
+View Article
+{% endblock %}
+
+
+{% block body %}
+{% include "main/_article.html.twig" with {'view' : true } %}
+{% endblock %}

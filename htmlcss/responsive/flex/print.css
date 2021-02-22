@@ -1,0 +1,14 @@
+/** dans le cas où on veuille imprimer une page, notre feuille css pourrait changer pour être plus print-friendly **/
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.block {
+    font-size: 2em;
+    margin: 2%;
+    width: 150px;
+    height: 200px;
+    border: 1px solid black; 
+}

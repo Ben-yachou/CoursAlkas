@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- 
+            Head est l'en-tête du document html 
+            Il contient des informations sur le document qui ne vont pas forcément être affichées sur la page elle même, mais plutôt utilisées pour le fonctionnement des navigateurs, moteurs de recherches, et autres 
+        -->
+        <title>Ma première page web</title>
+        <!-- Les balises meta décrivent une propriété du document 
+        la balise meta charset permet de définir le set de caractères utilisé pour le rendu du texte, ici utf-8 un set de caractères universel-->
+        <meta charset="utf-8">
+        <!-- beaucoup d'attributs meta sont disponibles et standardisés mais il est possible de créer les siens sans problème. Parmi les attributs standards on retrouve par exemple name, qui permet d'attribuer une valeur à une propriété -->
+        <meta name='description' content='Ma première page html'>
+        <!-- l'attribut content permet d'indiquer le contenu d'une propriété définie avec name -->
+
+        <!-- une balise link permet de lier un document externe (souvent css ou js) à notre document html -->
+        <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    </head>
+
+    <body>
+        <div class="main-container">
+            <!-- Corps de la page, le contenu de notre document, tout ce qu'on désire afficher à l'écran devra être placé dans body-->
+    
+            <!-- balise sémantique définissant la section "en-tête" du document ou d'une section -->
+            <header>
+                <!-- les balises h pour heading permettent de définir une hierarchie de titres de 1 à 6, 1 étant le titre principal-->
+                <!-- il ne devrait y avoir qu'un seul h1 sur le document -->
+                <h1>Ma première page Web</h1>
+                <!-- en dessous de h1, il n'y a aucune limitation sur l'utilisation des balises h -->
+                <h2>C'est mon premier site soyez indulgents</h2>
+            </header>
+            
+            <nav>
+                <!-- les éléments de navigation (liens vers autre contenu, autres catégories peuvent être insérés ici pour être retrouvés plus facilement-->
+                <!-- plusieurs nav peuvent exister sur une même page, par exemple un nav contenant la navigation principale, et potentiellement un nav permettant de revenir en arrière, changer une catégorie de document, etc -->
+                
+                <ul>
+                    <!-- ul, unordered list, permet de lister du contenu sans hierarchie -->
+                    <li>
+                        <!-- li est un élément d'une liste -->
+                        <!-- a, pour anchor, permet de définir un lien vers une ressource dans le document présent, ou externe au document -->
+                        <a href="#">Lien dans la page</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+    
+            <!-- main permet de définir l'emplacement du contenu principal du document, elle doit être unique -->
+            <main>
+                <!-- article définit une portion de la page prévue pour une partie de contenu concernant un thème précis et pouvant être indépendant du reste de la page -->
+                <article>
+                    <h2>Mes loisirs</h2>
+                    <section>
+                        <div class="section-text">
+                            <!-- une section définit une partie de contenu thématique et commence généralement par un titre -->
+                            <h3>Le kite surf</h3>
+                            <!-- une balise p permet de définir un paragraphe -->
+                            <p>
+                                J'adore le <a href="kitesurf.html">kite surf.</a>
+                            </p>
+                        </div>
+                        <!-- les balises img permettent de définir du contenu pictural
+                        l'attribut src permet de définir l'url de l'image, l'attribut alt une description de cette image, servant également au cas ou l'image ne chargerait pas -->
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150" alt="Moi faisant du kite surf"/>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="section-text">
+                            <h3>Le couch surf</h3>
+                            <p>
+                                <!-- p est une balise textuelle, c'est à dire qu'elle ne définit pas un bloc dans le document mais plutôt un attribut pour une partie du texte-->
+                                <!-- dans les balises textuelles on retrouve également des balises comme em, strong et span, qui permettent de séparer des mots ou groupes de mots pour leur donner une importance particulière-->
+                                <!-- em par exemple marque l'emphase sur une partie d'un texte -->
+                                Lorem ipsum <em>dolor sit amet</em> consectetur adipisicing elit.
+                                <!--strong marque une plus grande importance pour une partie du texte, ou une tonalité particulière (plus sérieux, grave etc)--> 
+                                Quae nobis recusandae ex corrupti <strong>eius fuga</strong> officiis quaerat repellendus iusto perferendis, voluptas, at iure eaque iste minima magni! Cumque, saepe ab.
+                            </p>
+                        </div>
+                    </section>
+                </article>
+            </main>
+            <footer>
+                <!-- le footer est comme header, il définit le pied de page ou une fin de section comme header définit l'en tête ou un début de section -->
+                <a href="instagram.com/jacques">Instagram</a>
+                <!-- il existe des balises plus spécifiques, comme par exemple address qui permet de définir l'adresse de l'auteur -->
+                <address>
+                    Me contacter : 
+                    <a href="mailto:contact@monblog.fr">Par mail au contact@monblog.fr</a>
+                    Par voie postale : 
+                    300 Rue du 18 mai 1833
+                    Espigoule 13400
+                </address>
+            </footer>
+        </div>
+    </body>
+</html>

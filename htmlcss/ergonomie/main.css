@@ -1,0 +1,352 @@
+body {
+    background-color: #f0f3f7;
+}
+
+.card {
+    border-radius: 5px;
+    background-color: white;
+    margin: 30px;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111111;
+}
+
+/** EXEMPLE 1 : Produit Service **/
+
+.card1 {
+    display: flex;
+    width: 500px;
+}
+
+
+.card1 .card-img {
+    border-radius: 5px 0 0 5px;
+    width: 20%;
+}
+
+.card1 .card-content > *  {
+    padding: 2%;
+}
+
+.card1 .card-content header {
+    padding: 3% 2% 0% 2%;
+}
+
+.card1 .card-content p {
+    /* un contenu moins important à l'écran est plus clair, pas plus petit */
+    color: #111111ca;
+
+}
+
+.card1 .card-content span {
+    /* pour éclaircir un texte, on peut baisser son opacité, cela aura l'effet supplémentaire de conserver la teinte d'une couleur, et ainsi permettre au texte de mieux se fondre dans son conteneur */
+    color: #111111ca;
+}
+
+.card1 .card-content strong {
+    color: #111111;
+}
+
+.card1 h2 {
+    margin: 0;
+}
+
+.card1 .card-content section {
+    /* pour définir des sections d'un ensemble, on peut utiliser des couleurs et des marges au lieu d'utiliser des bordures*/
+    background-color: #00000012;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card1 .book-now, .card2 .buy-now {
+    cursor: pointer;
+    background-color: #1f79f0;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.card1 .book-now:hover, .card2 .buy-now:hover {
+    background-color: #1f79f0d6;
+}
+
+/** EXEMPLE 2 : Produit Telephone **/
+.card2 {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+
+.card2 .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.card2 header {
+    padding: 2%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+.card2 .model {
+    font-weight: 700;
+}
+
+.card2 .new {
+    /** Remplacer une date (2020 par exemple) par un élément plus parlant (ex: 2020 => nouveau)  pour attirer l'oeil et donner une information plus intéressante pour le client **/
+    padding: 0.5em;
+    background-color: rgba(253, 121, 50, 0.898);
+    font-size: 0.5em;
+    line-height:1.5em;
+    border-radius: 5px;
+    color: white; 
+}
+
+.card2 .price {
+    font-size: 1.4em;
+    font-weight: 700;
+    padding: 10px 15px;
+}
+
+.card2 header > div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.card2 header > div > span {
+    margin: 0 5px;
+}
+
+.card2 .card-img {
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    height: 150px;
+    background: no-repeat url('https://via.placeholder.com/150x150');
+    background-size: cover;
+    background-position: center;
+}
+
+.card2 .card-content > section {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    padding: 2% 0;
+}
+
+.card2 .specs {
+    background-color: #00000012;
+    width: 100%;
+    color: #111111c7;
+}
+
+.card2 .specs .row {
+    width: 70%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.card2 .specs .row span {
+    padding: 2%;
+}
+
+.card2 .specs .row span i {
+    color: #111111;
+    padding-right: 5px;
+}
+
+
+/** EXEMPLE 3 : Produit Chaussure **/
+
+.card3 {
+    margin:100px 30px;
+    background-color: transparent;
+    height: 300px;
+    width: 600px;
+    display: flex;
+    box-shadow: none;
+    align-items: center;
+}
+
+.card3 h2, .card3 h3, .card3 h4 {
+    margin: 0;
+    padding: 10px 15px;
+}
+
+.card3 h2 {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #111111ef;
+    padding-bottom: 0px;
+}
+
+.card3 h4 {
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #1111119f
+}
+
+.card3 .price {
+    font-weight: 700;
+    color: #111111;
+    font-size: 1.3em;
+}
+.card3 .card-img {
+    background: no-repeat url('./revolt-164_6wVEHfI-unsplash.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+    transform: perspective(2000px) rotateY(-1deg);
+    transition: all 0.3s;
+}
+
+
+.card3 .card-content {
+    transform: perspective(2000px) rotateY(1deg);
+    border-radius: 2px;
+    padding: 2%;
+    margin-left: -5px;
+    background-color: white;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 
+    -4px 0px 10px rgba(0, 0, 0, 0.226);
+    width: 100%;
+}
+
+.card3 .card-content > * {
+    padding: 3% 2%;
+
+}
+
+.card3 .sizes {
+    background-color: rgb(231, 231, 231);
+    box-shadow: inset 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card3 .sizes .size {
+    background-color: white;
+    cursor: pointer;
+    margin: 2px 10px;
+    padding: 5px;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+    border-radius:2px;
+    font-size: 1em;
+    line-height:1.2em;
+    transition: all 0.1s;
+}
+
+/* pour faire apparaitre un element comme désactivé, on peut le griser */
+.card3 .sizes .disabled {
+    background-color: rgba(128, 128, 128, 0.521) ;
+    color: #11111148 ;
+}
+
+/* on bloque également les interactions pour les éléments désactivés 
+pour tout element contenant une taille n'étant pas disabled, une fois survolé 
+on change l'échelle de l'élément via transform scale */
+.card3 .sizes .size:not(.disabled):hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.card3 .sizes .disabled:hover {
+    cursor: default;
+}
+
+.card3 .colors {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+.card3 .colors .color {
+    height: 5px;
+    width: 5px;
+    padding: 2%;
+    border-radius: 200%;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.192);
+    transition: all 0.2s;
+}
+.card3 .colors .color:hover {
+    cursor: pointer;
+    transform: scale(1.4);
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.192),
+    inset 0 1px 5px 0 rgba(0, 0, 0, 0.151);
+}
+
+.card3 .color.selected {
+    transform: scale(1.4);
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.192),
+     inset 0 1px 5px 0 rgba(0, 0, 0, 0.425);
+}
+
+.color1 {
+    background-color: #cc061c;
+}
+
+.color2 {
+    background-color: #F5D547;
+}
+
+.color3 {
+    background-color: #C19AB7;
+}
+
+.color4 {
+    background-color: #B9CFD4;
+}
+
+.card3 .ctas {
+    display: flex;
+    justify-content:space-between;
+    padding-top: 20px;
+}
+
+
+.card3 .ctas button {
+    cursor: pointer;
+    margin: 0 5px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 2px;
+    padding: 5px;
+    background-color: #1446A0;
+    transition: all 0.2s;
+}
+
+.card3 .ctas .cart:hover {
+    box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.192);
+    background-color: #1445a0d2;
+}
+
+.card3 .ctas .wishlist {
+    background-color: transparent;
+    color: #111111f3;
+}
+.card3 .ctas .wishlist:hover {
+    color: #111111a2;
+}
+

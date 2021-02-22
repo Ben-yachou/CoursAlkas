@@ -1,0 +1,40 @@
+<!--
+    Un formulaire HTML se définit à l'aide de la balise <form>
+    On y définit le type de requête (GET, POST...) ainsi que sa destination (l'url de traitement du formulaire)
+    Si aucune destination n'est définie, c'est la page du formulaire qui doit s'en charger
+-->
+<!-- 
+method est la méthode HTTP utilisée, GET pour récuperer, POST pour envoyer
+action est la "destination" pour traitement
+-->
+<form method="POST" action="form_result.php">
+    <!-- 
+        Pour récupérer des données entrées du côté client, il faut définir les différents champs de notre formulaire à l'aide de <input> et consorts
+    -->
+    <label for="nickname">Pseudo</label>
+    <!-- 
+    dans un label, l'attribut for est lié à l'id du champ input correspondant (côté client)
+    l'attribut name sert à identifier la valeur lors du traitement du formulaire (côté serveur)
+    -->
+    <input id="nickname" name="nickname" type="text">
+
+    <!-- pour définir une liste déroulante, on peut utiliser <select> -->
+    <select name="fruit" id="fruit">
+        <!-- permet de définir une liste de choix parmis lesquels seul un pourra être utilisé 
+            chaque choix est défini dans une balise <option> -->
+        <option value="fraise">Fraise</option>
+        <!-- value est la valeur qu'on recevra lors du traitement du formulaire-->
+        <option value="banane">Banane</option>
+        <option value="pomme">Pomme</option>
+        <option value="poire">Poire</option>
+    </select>
+
+    <!-- pour définir une checkbox on utilse type="checkbox" sur un champ input-->
+    <label for="agree">Acceptez vous les conditions d'utilisation ? </label>
+    <input type="checkbox" name="agree" id="agree">
+
+    <!-- pour envoyer le formulaire il faut un bouton d'envoi qui est également un input-->
+    <!-- lorsqu'on appuie sur le bouton submit, la page se redirige vers l'url définie dans "action" de notre formulaire -->
+    <!-- et les valeurs du formulaires sont envoyées avec -->
+    <input type="submit" value="Envoyer">
+</form>

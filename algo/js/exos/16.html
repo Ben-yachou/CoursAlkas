@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Exercice 16</title>
+</head>
+
+<body>
+    Objectif :
+    Implémenter l'algorithme FizzBuzz
+    Afficher les nombres de 1 à 100, 
+    en remplaçant les nombres divisibles par 3 par Fizz
+    les nombres divisibles par 5 par Buzz
+    les nombres divisibles par 3 et par 5 par FizzBuzz
+    <script>
+    //exercice ici : 
+    for (let i = 1; i <= 100; i++){
+        //on commence par tester la divisibilité par 15 
+        //pour empêcher que Fizz s'affiche au lieu de FizzBuzz
+        if (i % 15 === 0){
+            console.log("FizzBuzz")
+        } else if (i % 3 === 0){
+            console.log("Fizz")
+        } else if (i % 5 === 0){
+            console.log("Buzz")
+        } else {
+            console.log(i)
+        }
+    }        
+    </script>
+</body>
+
+</html>

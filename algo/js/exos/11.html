@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Exercice 11</title>
+</head>
+
+<body>
+    Objectif : 
+    A partir d'un tableau de nombre aléatoires dont la taille est définie par l'utilisateur, afficher le tableau ainsi que les n derniers nombres de ce tableau, n étant précisé par l'utilisateur.
+    Exemple : Si le tableau généré est [ 0, 3, 10, 19, 40, 41 ]
+    Et que l'utilisateur précise un n = 3
+    Le résultat doit être 41 40 19 ou 19 40 41
+    <script>
+        //renvoie un nombre aléatoire entre 1 et 100 
+        function getRandNum(){
+            return Math.floor(Math.random() * 100 + 1)
+        }
+        //génération d'un tableau aléatoire 
+        let taille = Number(prompt("Entrez la taille du tableau"))
+        let nombres = []
+        for (let i = 0; i < taille; i++){
+            nombres.push(getRandNum())
+        }
+        console.log(nombres)
+
+        //suite de l'exercice : 
+        let n = Number(prompt("Entrez le nombre d'éléments à recup"))
+        //pour parcourir notre tableau à l'envers on définit notre boucle comme commençant de la fin et s'arrêtant à la fin - n 
+        //pour faire diminuer i, on le décrémente avec i-- 
+        console.log("boucle à l'envers")
+        for (let i = nombres.length - 1; i >= nombres.length - n; i--){
+            console.log(nombres[i])
+        }
+        
+        console.log("boucle à l'endroit")
+        //on peut aussi juste parcourir le tableau à l'endroit
+        //en partant du n dernier élément 
+        for (let i = nombres.length -n; i <= nombres.length - 1; i++){
+            console.log(nombres[i])
+        }
+        //il est également possible d'utiliser slice 
+        console.log(nombres.slice(nombres.length - n, nombres.length))
+    </script>
+</body>
+
+</html>

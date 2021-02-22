@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Exercice 18</title>
+</head>
+
+<body>
+    Objectif :
+    Compter les voyelles d'une chaîne de caractères
+    <script>
+        let phrase = prompt("Entrez une phrase")
+        //on copie la phrase en minuscule pour n'avoir à faire la comparaison qu'avec les voyelles minuscules
+        let phraseMinuscule = phrase.toLowerCase()
+        //on prépare un compteur à 0
+        let nbVoyelles = 0
+        //on parcourt la chaîne en entier
+        for (let i = 0; i < phrase.length; i++){
+            //si on tombe sur une voyelle 
+            if (phraseMinuscule[i] === "a" || phraseMinuscule[i] === "e" ||  phraseMinuscule[i] === "i" || phraseMinuscule[i] === "o" || phraseMinuscule[i] === "u" || phraseMinuscule[i] === "y"){
+                //on ajoute 1 à notre compteur
+                nbVoyelles++
+            }
+        }
+        console.log(phrase)
+        console.log(nbVoyelles)
+    </script>
+</body>
+
+</html>

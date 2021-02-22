@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+{{parent()}}
+Create Article
+{% endblock %}
+
+{% form_theme createForm 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+<div>
+    {{form_start(createForm)}}
+    <div class="mb-3">
+        {{form_row(createForm.title)}}
+    </div>
+    <div class="mb-3">
+        {{form_row(createForm.content)}}
+    </div>
+    {{form_row(createForm.submit)}}
+    {{form_end(createForm)}}
+</div>
+{% endblock %}

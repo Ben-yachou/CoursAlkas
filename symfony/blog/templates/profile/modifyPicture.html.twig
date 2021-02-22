@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{parent()}} Modify Picture{% endblock %}
+
+{% block body %}
+<h1>Modify Picture</h1>
+{% form_theme modifyPictureForm 'bootstrap_4_layout.html.twig' %}
+{{form_start(modifyPictureForm)}}
+{{form_row(modifyPictureForm.pictureFile)}}
+{{form_end(modifyPictureForm)}}
+<img src="" alt="profile picture preview" id="preview">
+<div id="errorMessage" class="alert alert-danger"></div>
+{% endblock %}
+
+{% block javascripts %}
+<script>
+    //on récupère notre champ input
+    let inputFile = document.getElementById('picture_modify_form_pictureFile');
+    //on récupère notre image de preview
+    let preview = document.getElementById('preview');
+    preview.style.display = "none";
+    //on récupère un endroit ou afficher un message d'erreur
+    let errorMessage = document.getElementById('errorMessage');
+    errorMessage.style.display = "none";
+    //on prépare une liste des types acceptés
+    let acceptedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'];
+    //a chaque fois que le inputFile reçoit un changement
+    inputFile.addEventListener('change', () => {
+        //on récupère le fichier reçu
+        let file = inputFile.files[0];
+        //si le type du fichier est accepté
+        if (acceptedTypes.includes(file.type)) {
+            //on récupère son url et la passe a l'image 
+            preview.src = window.URL.createObjectURL(file);
+            preview.style.display = "block";
+
+            //on cache le message d'erreur
+            errorMessage.style.display = "none";
+        } else {
+            //dans le cas ou le type de fichier est mauvais
+            //on cache la preview
+            preview.src = "";
+            preview.style.display = "none";
+
+            //on affiche le message d'erreur
+            errorMessage.textContent = "format non supporté";
+            errorMessage.style.display = "block";
+        }
+    })
+</script>
+{% endblock %}

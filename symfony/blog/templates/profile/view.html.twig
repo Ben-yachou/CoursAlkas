@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{parent()}} {{user}}'s Profile {% endblock %}
+
+{% block body %}
+<div class="row mt-3 mb-3">
+    <div class="col">
+        <h2>{{user}}'s Profile</h2>
+    </div>
+    <div class="col">
+        <img class="profile-pic" src="{{asset(user_profile_pictures_dir ~ user.picture)}}"
+            alt="{{user}}'s profile picture">
+    </div>
+</div>
+{% include "profile/_article_history.html.twig" with {'articles' : user.articles} %}
+
+{% endblock %}

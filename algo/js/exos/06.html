@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Exercice 6</title>
+</head>
+
+<body>
+    Objectif : 
+    Afficher les valeurs en miles de chaque valeur kilométrique contenues entre les valeurs demandées a et b. 
+    (1.609km = 1 mile)
+    <script>
+        let a = Number(prompt("Entrez le premier nombre"))
+        let b = Number(prompt("Entrez le second nombre"))
+        for (let i = a + 1; i < b; i++) {
+            //pour concaténer une valeur avec une chaine de caractères
+            //on peut utiliser un + 
+            console.log(i/1.609 + " miles")
+        }
+    </script>
+</body>
+
+</html>

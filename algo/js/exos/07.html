@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Exercice 7</title>
+</head>
+
+<body>
+    Objectif : 
+Demander deux nombres entiers a et b. 
+Afficher la somme des nombres entiers pairs contenus entre a et b. 
+    <script>
+        let a = Number(prompt("Entrez le premier nombre"))
+        let b = Number(prompt("Entrez le second nombre"))
+        //on déclare le resultat en dehors de la boucle pour qu'il soit disponible dans et hors de la boucle
+        let resultat = 0
+        for (let i = a + 1; i < b; i++) {
+            //si i est pair (si i modulo 2 donne 0, i est divisible par 2)
+            if (i%2 === 0) {
+                //on ajoute notre nombre au total 
+                resultat = resultat + i 
+            }
+        }
+        //une fois la boucle terminée, on affiche le resultat
+        console.log(resultat)
+    </script>
+</body>
+
+</html>

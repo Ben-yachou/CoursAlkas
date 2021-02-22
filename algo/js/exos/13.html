@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Exercice 13</title>
+</head>
+
+<body>
+    Objectif : 
+    Compter les nombres pairs et impairs d'un tableau de valeurs aléatoires. 
+    <script>
+        //renvoie un nombre aléatoire entre 1 et 100 
+        function getRandNum(){
+            return Math.floor(Math.random() * 100 + 1)
+        }
+        //génération d'un tableau aléatoire 
+        let taille = Number(prompt("Entrez la taille du tableau"))
+        let nombres = []
+        for (let i = 0; i < taille; i++){
+            nombres.push(getRandNum())
+        }
+        console.log(nombres)
+
+        //suite de l'exercice : 
+        let pairs = 0
+        let impairs = 0
+        for (let i = 0; i < nombres.length; i++) {
+            //si un nombre est pair
+            if (nombres[i]%2 === 0){
+                //on incrémente le compteur de pairs
+                pairs++
+            } else {
+                //sinon on incrémente le compte d'impairs 
+                impairs++
+            }
+        }
+        console.log(pairs, impairs)
+</script>
+</body>
+
+</html>

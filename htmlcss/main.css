@@ -1,0 +1,76 @@
+/** 
+    En CSS, on définit l'apparence de nos éléments grâce à des règles
+    Ces règles ciblent un ou plusieurs éléments, puis définissent des propriétés
+**/
+/** ici, on cible les éléments h1 **/
+h1 {
+    /** on applique la valeur blue a la propriété color **/
+    color: blue; 
+    /** on applique la valeur 3em a la propriété font-size 
+    1em équivaut à 1 hauteur de caractère, 3em signifie 3 fois la hauteur d'un caractère 
+    **/
+    font-size: 3em;
+}
+
+/** on peut cibler plusieurs éléments en les séparant par des virgules **/
+h1, h2, h3, h4, h5 , h6 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    /** padding définit la marge intérieure à un bloc 
+    on la définit à 0 pour écraser le style par défaut des ul**/
+    padding: 0;
+    /** display: flex permet de gérer ul comme une "flexbox", ce qui permet d'accéder à des utilitaires comme le centrage automatique  **/
+    display: flex; /** https://developer.mozilla.org/fr/docs/Apprendre/CSS/CSS_layout/Flexbox **/
+    /** justify-content permet de définir la justification du contenu sur l'axe principal, par défaut cet axe est horizontal **/
+    justify-content: center;
+}
+
+li {
+    margin: 1em;
+}
+
+nav a {
+    background-color: aliceblue;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+}
+/** :hover est une pseudo classe qui s'active lorsqu'on survole un élément 
+ici, la règle s'appliquera lors du survol d'un lien (a) dans notre nav  **/
+nav a:hover {
+    background-color: rgb(218, 236, 252);
+}
+
+/** si on cible un élément avec un . on cible donc une classe et pas un nom d'élément 
+tous les éléments qui ont l'attribut class="main-container" en html seront concernés par cette règle **/
+.main-container {
+    /** définir une taille avec % revient à dire "pourcentage de la taille du parent" **/
+    width: 80%;
+    /** vh et vw sont des pourcentages de la taille de la vue (espace utilisable) du navigateur (vh pour hauteur, vw pour largeur) **/
+    height: 90vh;
+    margin: 0 auto;
+    display: flex;
+    /** on peut définir l'axe principal d'une flexbox avec flex-direction **/
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+section {
+    display: flex;
+    margin-left: 15px;
+    justify-content: space-between;
+}
+
+.image-container {
+    /** flex-grow permet à un enfant d'une flexbox de définir la place qu'il prendra dans la flex box https://flexbox.malven.co/ **/
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}

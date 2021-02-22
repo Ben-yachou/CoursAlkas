@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Exercice 22</title>
+</head>
+
+<body>
+    Objectif :
+    Implémenter un chiffre César
+    Un chiffre César est une méthode cryptographique basique visant à encoder des messages à l'aide d'une clé numérique,
+    clé déterminant le décalage des lettres de l'alphabet dans le message.
+    Ainsi, avec une clé de 3, un 'a' deviendrait un 'd' dans le message codé. un 'b' deviendrait un 'e', ainsi de suite.
+    Un 'z' deviendrait un 'c'
+    <script>
+        let phrase = prompt("Entrez une phrase à coder")
+        let cle = Number(prompt("Entrez la clé de chiffrement"))
+
+        //on prépare un alphabet pour pouvoir gérer le décalage de façon numérique à l'aide des positions des lettres dans notre tableau
+        let alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+        //on stockera le message chiffré dans une variable
+        let code = ""
+
+        for (let i = 0; i < phrase.length; i++) {
+            //pour chaque lettre, on retrouve sa position dans l'alphabet avec indexOf
+            //on décale ensuite cette position à l'aide du nombre de notre clé 
+            //on utilise un modulo 26 pour toujours obtenir une valeur contenue dans notre alphabet 
+            let codeLettre = (alphabet.indexOf(phrase[i].toUpperCase()) + cle) % 26 
+            //on récupère ensuite la lettre décalée dans le même tableau d'alphabet
+            code += alphabet[codeLettre]
+        }
+        //on affiche le résultat 
+        console.log(phrase, cle, code)
+    </script>
+</body>
+
+</html>

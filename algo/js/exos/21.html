@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Exercice 21</title>
+</head>
+
+<body>
+    Objectif :
+    Renvoyer true si une phrase est un palindrome (se lit dans les deux sens)
+    kayak => true
+    kayac => false
+    Un port trop nu => true 
+    La mariée ira mal => true
+    <script>
+        let phrase = prompt("Entrez une phrase")
+
+        //retire les espaces d'une phrase
+        //retire les accents
+        //renvoie le tout en minuscule
+        function uniformiser(phrase){
+            //passage en minuscule
+            let phraseUniforme = phrase.toLowerCase()
+            //retrait des accents : 
+            phraseUniforme = phraseUniforme.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+            //retrait des espaces et des apostrophes
+            phraseUniforme = phraseUniforme.replace(/ |'/g, "")
+            //on renvoie notre phrase sans espaces, accents ou majuscules
+            return phraseUniforme
+        }
+
+        function inverser(phrase){
+            let inverse = ""
+            //on parcourt la string originelle à l'envers
+            for (let i = phrase.length - 1; i >= 0; i--){
+                //et on ajoute chaque caractère lu à l'envers dans la string vide
+                inverse += phrase[i]
+            }
+            //on renvoie la string inversée ainsi reconstruite
+            return inverse
+        }
+
+        //en comparant notre phrase à l'endroit avec une inversée, les deux sans accent, majuscules ou espaces, on obtient true ou false, true étant si les deux sont égales
+        console.log(inverser(uniformiser(phrase)) === uniformiser(phrase))
+    </script>
+</body>
+
+</html>

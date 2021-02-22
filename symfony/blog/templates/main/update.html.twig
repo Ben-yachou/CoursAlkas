@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+{{parent()}}
+Update Article
+{% endblock %}
+
+{% form_theme updateForm 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+<div>
+    <div>
+        {{form_start(updateForm)}}
+        <div class="mb-3">
+            {{form_row(updateForm.title)}}
+        </div>
+        <div class="mb-3">
+            {{form_row(updateForm.content)}}
+        </div>
+        {{form_row(updateForm.submit)}}
+        {{form_end(updateForm)}}
+    </div>
+</div>
+{% endblock %}

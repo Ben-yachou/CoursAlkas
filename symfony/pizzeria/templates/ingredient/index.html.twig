@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ingredient List{% endblock %}
+
+{% block body %}
+<a href="{{path( 'ingredient_create' ) }}">add new</a>
+{% for ingredient in ingredients %}
+<div>
+
+    {{ingredient.name}}
+
+    {{ (ingredient.extraPrice/100) | format_currency('EUR', locale='fr')}}
+
+    <a href="{{ path( 'ingredient_update', {'id': ingredient.id} ) }}">
+        Update
+    </a>
+    <a href="{{ path( 'ingredient_delete', {'id': ingredient.id} ) }}">
+        Delete
+    </a>
+</div>
+{% endfor %}
+{% endblock %}

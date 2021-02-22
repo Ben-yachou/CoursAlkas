@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Responsive images example</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body>
+    <header>
+        <!-- Pour pouvoir gérer facilement des images adaptatives, on peut utiliser l'attribut de la balise img srcset
+        srcset permet de donner un set d'images de résolutions différentes pour le navigateur
+        l'attribut sizes permet ensuite de définir les tailles de l'image selon des média queries (max-width, min-width, portrait etc)
+        ici, dans srcset, https://via.placeholder.com/400x150 400w signifie qu'on fournit une image de 400px de largeur
+        dans sizes, (max-width: 468px) 300px signifie que pour un écran en dessous de 468px, l'image fera 300px de largeur à l'écran. 
+        Le navigateur combine les deux règles pour choisir l'image qui semble la plus adaptée selon sa résolution
+        https://developer.mozilla.org/fr/docs/Apprendre/HTML/Comment/Ajouter_des_images_adaptatives_%C3%A0_une_page_web
+
+        l'attribut src est toujours utile au cas ou un navigateur n'est pas compatible avec srcset
+        -->
+        <img 
+        srcset="https://via.placeholder.com/400x150 400w,
+                https://via.placeholder.com/700x200 700w,
+                https://via.placeholder.com/1000x300 1000w"
+        sizes="(max-width: 468px) 300px,
+                (max-width: 760px) 600px,
+                980px"
+        src="https://via.placeholder.com/700x200" alt="placeholder"
+        >
+    </header>
+    <!-- Au lieu de préciser une largeur d'image, on peut également préciser une resolution par pixel, 2x 3x vaudrait 2 DPR (deep pixel resolution) ou 3 DPR 
+    Ex : les ecrans haute définition peuvent avoir entre 1.5 et 3 DPR (ecrans Retina) sur lesquels des images de résolution plus basse apparaitraient pixelisées -->
+    <img srcset="https://via.placeholder.com/400x150,
+    https://via.placeholder.com/700x200 2x,
+    https://via.placeholder.com/1000x300 3x"
+    src="https://via.placeholder.com/700x200" alt="placeholder">
+</body>
+</html>

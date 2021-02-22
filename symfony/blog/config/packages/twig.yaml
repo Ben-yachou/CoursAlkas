@@ -1,0 +1,4 @@
+twig:
+    default_path: "%kernel.project_dir%/templates"
+    globals:
+        user_profile_pictures_dir: "uploads/profilePictures/"

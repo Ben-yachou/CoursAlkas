@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.block {
+    font-size: 2em;
+    background-color: antiquewhite;
+    margin: 2%;
+    width: 150px;
+    height: 200px; 
+}
+
+/* pour les écrans de 468px de largeur et plus tablettes et téléphones haute résolution ou en paysage */
+@media screen and (min-width: 468px){
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .block {
+        font-size: 4em;
+        margin: 2%;
+    }
+}
+
+/** pour les écrans de pc et + **/
+@media screen and (min-width: 992px){
+
+}

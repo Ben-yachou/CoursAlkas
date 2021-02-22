@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!--
+        Le titre <title> est un des é&léments majeurs aidant au referencement de votre site via des mots clés 
+        Ici les mots clés contenus dans ce titre eraient SEO, Search, Engine et Optimization
+        Chaque titre de page dans un site doit être unique et faire au maximum 150 caractères 
+    -->
+    <title>SEO - Search Engine Optimization</title>
+    <!-- La balise meta description est utilise au referencement car elle indique à l'utilisateur ce que contient notre page. Elle doit idéalement faire un maximum de 150 caractères, et chaque description, comme le titre, doit ere unique et concerner le contenu de notre page
+    C'est également le contenu de cette balise qui sera affiché sur les résultats d'un moteur de recherche -->
+    <meta name="description" content="Astuces pour appréhender les SEO en améliorant notre contenu de site">
+
+    <!-- les balises meta author et copyright ont une utilité limitée mais peuvent entrer en compte dans certaines circonstances, qui sont elles inconnues 
+    Il est supposé que ces balises aident au referencement lorsque le contenu est intimement lié à son auteur (biographies, blogs personnels, blogs d'entreprise etc)-->
+    <meta name="author" content="Elone Meusque">
+    <meta name="copyright" content="©Taisse Là">
+
+    <!-- à l'heure actuelle, la propriété meta keywords n'est pas utilisée pour le referencement suite à des abus de la part des sites qui balançaient tous les mots clés de l'univers dans leurs mots clés de page, mais autant l'utiliser au cas ou ça change
+    Les mots clés doivent concerner purement le contenu de la page présente et sont séparés par des virgules 
+    Les mots clés ne sont pas sensible à la casse, donc inutile de les écrire de trois façons différentes-->
+    <meta name="keywords" content="SEO,Search,Engine,Optimization,Referencement,Astuces">
+
+    <!-- la balise meta robots permet de donner des instructions aux robots d'indexation, l'indexation se fait de façon suivante par défaut, mais autant l'écrire -->
+    <meta name="robots" content="index, follow">
+    <!-- la balise précédente est équivalente à : -->
+    <meta name="robots" content="all">
+    <!-- index signifie au robot d'indexer la page, follow l'autorise à suivre les liens-->
+    
+    <!-- dans le cas ou on aurait besoin de bloquer l'indexation (site en construction, page purement fonctionnelle sans intérêt sémantique, etc)-->
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <!-- noarchive permet de demander à ne pas mettre en cache notre page -->
+    <!-- la balise précédente est équivalent à :-->
+    <meta name="robots" content="none">
+
+    <!-- pour empêcher l'affichage d'un extrait de notre page lors d'une recherche on peut utiliser nosnippet dans content
+    cependant, il a été rapporté qu'il soit possible que le referencement soit freiné par l'utilisation de cette valeur, notamment chez google -->
+    <!-- chez google il existe également noimageindex qui permet a une page de ne pas être utiliseé comme reference dans google images -->
+</head>
+<body>
+    <!-- Le plus important pour aider au referencement d'une page est que son contenu soit engageant interessant et unique -->
+    <!-- unique dans le sens ou votre contenu de page ne doit pas être multiplié sur votre site (une page par article, une page par produit, etc etc),
+    interessant dans le sens ou le ceontenu de la page correspond efficacement à son titre, sa description, son url, et l'attente globale d'un utilisateur -->
+    <!-- engageant signifique que le utilisateurs une fois sur notre site désirent y réster et naviguer de page en page, ou lire son contenu-->
+    
+    <!-- il faut donc essayer de faire coller le contenu de la page à un set de mots clés, ce qui correspond environ à utiliser 3 ou 4 fois le même set de mots clés dans le contenu, la description et le titre, conduisant à un meilleur referencement -->
+    <!-- chaque page doit correspondre à un thème, chaque section du contenu doit suivre ce même thème, et si les thèmes sont bien cloisonnés dans différentes parties de notre site, alors le referencement en sera meilleur -->
+
+    <!-- Pour une organisation propre et sémantique de notre contenu :-->
+    <!-- On peut par exemple englober notre contenu principal dans une balise main -->
+    <main>
+        <!-- Utiliser un h1 comme titre principal contenant les mots clés principaux premet d'entamer le referencement du contenu de la page -->
+        <!-- h1 est UNIQUE -->
+        <h1>Les astuces de SEO, referencement naturel, et quelques phrases approximatives</h1>
+        <!-- dans le cas ou votre contenu est unique, sans sous section et peu structuré, on doit tenter de faire appel aux mots clés du titre pour lier le contenu au reste de la page -->
+        <article>
+            <!-- on peut donner une emphase a certains termes importants qui se trouve être des mots clés la plupart du temps -->
+            Du coup mon article va contenir des informations sur le <em>SEO</em>, et même si on va tenter d'éviter trop de prhases approximatives, il faut bien en fair quelques unes pour étoffer notre explication sur le referencement naturel.
+        </article>
+
+        <!-- si le contenu est structuré en plusieurs sous section, séparez le à l'aide de balises et introduisez ces sections à l'aide de h2, h3 etc  contenant le titre de chaque sous section-->
+        <article>
+            <h2>Le SEO c'est complexe</h2>
+            <section>
+                <!-- on retrouve les mots clés de notre sous titre, et on écrit le contenu à partir de ça -->
+                Ah le SEO c'est incroyable, y'a plein de trucs, quelle complexité wah etc
+            </section>
+            <h2>Parlons du referencement naturel</h2>
+            <section>
+                Le referencement truc de ouf !
+                <!-- on peut également utiliser des liens intérieurs, aidant à la navigation et au ferencement. 
+                Placer des liens sur des mot clés pour amener à du contenu est une bonne pratique, car cela permet d'atteindre un but important :
+                "On devrait toujours être à 2 ou 3 clics de chaque page du site, depuis n'importe quelle page du site"
+                -->
+                <!-- pour placer des liens il faut intégrer nos ancres au contenu de façon naturelle, donc les placer sur des mots clés -->
+                <!-- ce qui suit est NUL à VOMIR-->
+                <a href="page3.html">Cliquez ici</a> pour connaître l'histoire de Google.
+                <!-- l'ancre au dessus est vraiment NULE faut pas faire ça -->
+                <!-- l'ancre qui suit est géniale et c'est ce qu'il faut faire a peu près-->
+                Si vous êtes curieux, vous pouvez en apprendre plus sur <a href="histoire_google.html">l'histoire de Google</a>.
+                
+            </section>
+            <section>
+                <h2>Beaucoup de phrases approximatives pour peu de connaissances</h2>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit etc..
+
+                <!-- pour les images, utiliser une description dans l'attribut alt est INDISPENSABLE -->
+                <!-- mais également utile au referencement et à l'accesibilité-->
+                <img src="image.png"> <!-- nul -->
+                <img src="oiseauMoche.png" alt="image"> <!-- nul -->
+                <img src="oiseauMoche.png" alt=""> <!-- nul -->
+                <img src="oiseau-moche.png" alt="Un oiseau se distinguant de par sa mocheté, posé sur une branche"> <!-- magnifique, même s'il vaut mieux que l'image soit en lien avec le contenu -->
+
+                <!-- si on veut utiliser une légende pour notre image, on utilise figure et figcaption -->
+                <figure>
+                    <img src="oiseau-moche-interieur.png" alt="Un oiseau moche à l'intérieur, posé sur une branche">
+                    <figcaption>L'oiseau est moche à l'intérieur, car fan des Balkany</figcaption>
+                </figure>
+
+            </section>
+        </article>
+    </main>
+
+
+</body>
+</html>

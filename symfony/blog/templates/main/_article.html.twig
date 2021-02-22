@@ -1,0 +1,70 @@
+<div class="card article">
+    <div class="card-body">
+        {# pour générer un lien à partir d'une route dans un template twig,
+        on utilise la fonction path()
+        path() prend en paramètre le _nom_ de la route (définit avec name= dans notre annotation) et les _paramètres_de
+        la
+        route
+
+        ici on va chercher notre route view avec comme id l'id de notre article
+        path() va ensuite reconstituer l'url correspondante
+        #}
+        <div class="card-title">
+            {% if view is defined %}
+            <h1>
+                {{article.title}}
+            </h1>
+            {% else %}
+            <h2>
+                <a href="{{ path('view', {id: article.id}) }}">
+                    {{article.title}}
+                </a>
+            </h2>
+            {% endif %}
+        </div>
+
+        <h6 class="card-subtitle">
+            {# Pour afficher un objet de type Date ou Datetime, il faut d'abord le faire passer dans
+            un filtre twig pour le
+            formater en string. Le filtre date() permet de spécifier un format de Date à afficher
+
+            documentation:
+            https://twig.symfony.com/doc/3.x/filters/index.html
+            #}
+            <em>
+                écrit le {{article.createdAt | date('Y/m/d h:i:s')}} par <a
+                    href="{{ path('profile_view', {'username' : article.author }) }} ">{{article.author}}</a>
+            </em>
+        </h6>
+        <p class="card-text">{{article.content | raw}}</p>
+    </div>
+
+    {% if view is not defined or app.user == article.author %}
+    <div class="card-footer">
+        <div class="btn-group">
+            {% if view is not defined %}
+            <a href="{{ path('view', {id: article.id}) }}" class="btn btn-primary">Read Article</a>
+            {% endif %}
+
+            {% if app.user and app.user == article.author %}
+            <div class="btn-group" role="group">
+                <button id="article_actions_drop" type="button" class="btn btn-outline-primary dropdown-toggle"
+                    data-bs-toggle="dropdown">
+                    Actions
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="article_actions_drop">
+                    <li>
+                        <a class="dropdown-item" href="{{ path('update', {id: article.id}) }}">Update Article</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item danger" href="{{ path('delete', {id: article.id}) }}">Delete
+                            Article</a>
+                    </li>
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+
+</div>

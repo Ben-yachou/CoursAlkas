@@ -1,0 +1,25 @@
+<div class="profile-article-history">
+    <h4>Article History</h4>
+    <ul class="list-group">
+
+        {% for article in articles|reverse %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <span>
+                <a href="{{ path('view', {'id' : article.id }) }}"> {{ article.title }}</a> écrit le {{
+                article.createdAt |
+                date('Y-m-d
+                H:i:s')}}
+            </span>
+
+            {% if user is defined and app.user == user %}
+            <span class="btn-group">
+
+                <a class="btn btn-primary" href="{{ path('view', {'id' : article.id }) }}">View</a>
+                <a class="btn btn-outline-primary" href="{{ path('update', {'id' : article.id }) }}">Update</a>
+                <a class="btn btn-danger" href="{{ path('delete', {'id' : article.id }) }}">Delete</a>
+            </span>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</div>

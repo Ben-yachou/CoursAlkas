@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Exercice 8</title>
+</head>
+
+<body>
+    Objectif : 
+    Remplir et afficher un tableau avec les valeurs contenues entre deux bornes a et b demandées à l'utilisateur. 
+    <script>
+        let a = Number(prompt("Entrez le premier nombre"))
+        let b = Number(prompt("Entrez le second nombre"))
+        //création d'un tableau vide
+        let nombres = []
+        for (let i = a + 1; i < b; i++) {
+            //on ajoute chaque nombre dans notre tableau
+            nombres.push(i)
+        }
+        //on affiche notre tableau 
+        console.log(nombres)
+    </script>
+</body>
+
+</html>

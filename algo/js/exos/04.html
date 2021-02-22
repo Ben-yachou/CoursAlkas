@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Exercice 4</title>
+</head>
+
+<body>
+    Objectif: Demander l'âge d'un joueur pour lui afficher à l'écran la catégorie sportive qui correspond : 
+    * < 6 ans : Mini Poussin
+    * 6 à 7 ans : Poussin
+    * 8 à 9 ans : Benjamin
+    * 10 à 11 ans : Minime
+    * => 12 ans : Cadet  
+
+    <script>
+        let age = Number(prompt("Entrez l'age du joueur"))
+        //si - de 6 ans
+        if (age < 6) {
+            //alors Mini Poussin
+            console.log("Mini poussin")
+        } else if (age < 8) {
+            console.log("Poussin")
+        } else if (age < 10) {
+            console.log("Benjamin")
+        } else if (age < 12) {
+            console.log("Minime")
+        } else {
+            console.log("Cadet")
+        }
+    </script>
+</body>
+
+</html>

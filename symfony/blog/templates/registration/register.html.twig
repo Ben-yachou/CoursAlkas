@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{parent()}} Register{% endblock %}
+
+{% block body %}
+<h1>Register</h1>
+{% form_theme registrationForm 'bootstrap_4_layout.html.twig' %}
+{{ form_start(registrationForm) }}
+<div class="mb-3">
+    {{ form_row(registrationForm.username) }}
+    {{ form_row(registrationForm.plainPassword.first) }}
+    {{ form_row(registrationForm.plainPassword.second) }}
+</div>
+
+<div class="mb-3">
+    {{ form_row(registrationForm.pictureFile) }}
+</div>
+<div class="mb-3">
+    {{ form_row(registrationForm.agreeTerms) }}
+</div>
+<button type="submit" class="btn btn-primary">Register</button>
+{{ form_end(registrationForm) }}
+{% endblock %}

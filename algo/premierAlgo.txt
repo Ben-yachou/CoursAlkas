@@ -1,0 +1,35 @@
+Algorithme - cuissonDesPates
+Permet au robot de cuire des pates et de les egoutter dans un evier 
+
+INGREDIENTS : 
+pates 
+eau 
+sel 
+
+USTENSILES : 
+casserole 
+fourchette à mélanger 
+passoire 
+plaque de cuisson 
+evier
+
+VARIABLES : 
+quantite_eau = 500mL 
+quantite_sel = 2g 
+quantite_pates = 200g
+temps_cuisson = 10min 
+
+DEBUT 
+    verser quantite_eau d'eau dans la casserole 
+    mettre quantite_sel dans la casserole 
+    allumer la plaque de cuisson 
+    régler la plaque de cuisson sur puissance maximale
+    mettre la casserole sur la plaque de cuisson
+    attendre que l'eau atteigne 100°C 
+    plonger quantite_pates de pates dans l'eau 
+    attendre temps_cuisson 
+    éteindre la plaque de cuisson
+    sortir la casserole de la plaque de cuisson 
+    placer la passoire au dessus de l'evier 
+    verser les pates dans la passoire
+FIN
