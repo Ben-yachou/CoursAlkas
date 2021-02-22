@@ -1,0 +1,179 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.background{
+    position:absolute;
+    top: 0px;
+    left: 0px;
+    height: 440px;
+    width: 446px;
+    background-color: black;
+    z-index: -9999;
+}
+.canvas{
+    height: 446px;
+    width: 446px;
+    display:grid;
+    grid-template-columns: 0.1fr 0.8fr repeat(6, 1fr) 0.5fr;
+    grid-template-rows: 0.1fr repeat(8, 1fr) 0.4fr 0.1fr;
+    
+    grid-gap: 7px;
+
+    grid-template-areas:
+    "w w w w w w x x d"
+    "u a a b b b c c d"
+    "u g e e e e f f d"
+    "u g e e e e f f d"
+    "u h e e e e i j d"
+    "u h e e e e i j d"
+    "u h k k l l m m d"
+    "v n k k o o p p q"
+    "v n r r s s p p q"
+    "v n r r t t t t q"
+    "zz zz y y yy yy yy yy z";
+}
+
+
+.cell {
+    background-color: #e5e0d8;
+}
+
+
+.cell1 {
+    grid-area: a;
+    background-color: #e5e0d8;
+}
+
+.cell2 {
+    grid-area: b;
+}
+
+.cell3 {
+    grid-area: c;
+    background-color: #f0c251;
+
+}
+.cell4 {
+    grid-area: d;
+    background-color: #e5e0d8;
+}
+.cell5 {
+    grid-area: e;
+    background-color: #d63f25;
+    
+}
+.cell6 {
+    grid-area: f;
+    background-color: #f0c251;
+    
+}
+.cell7 {
+    grid-area: g;
+    
+}
+.cell8 {
+    grid-area: h;
+    background-color: #e5e0d8;
+}
+.cell9 {
+    grid-area: i;
+    
+}
+.cell10 {
+    grid-area: j;
+}
+.cell11 {
+    grid-area: k;
+    background-color: #0b0d04;
+}
+.cell12 {
+    grid-area: l;
+    background-color: #e5e0d8;
+}
+.cell13 {
+    grid-area: m;
+    
+}
+.cell14 {
+    grid-area: n;
+    background-color: #f0c251;
+}
+.cell15 {
+    grid-area: o;
+    background-color: #e5e0d8;
+}
+.cell16 {
+    grid-area: p;
+    background-color: #023f73;
+    
+}
+.cell17 {
+    grid-area: q;
+    background-color: #d63f25;
+}
+.cell18 {
+    grid-area: r;
+    
+}
+.cell19 {
+    grid-area: s;
+    background-color: #0b0d04;
+    
+}
+.cell20 {
+    grid-area: t;
+    display: flex;
+    align-items: flex-end;
+    font-size: 0.4rem;
+    padding-left: 7px;
+}
+
+.cell21{
+    grid-area: u;
+    margin-top: -7px;
+    margin-right: -7px ;
+}
+
+.cell22{
+    grid-area: v;
+    background-color: #f0c251;
+    margin-top: -7px;
+    margin-right: -7px ;
+}
+.cell23{
+    grid-area: w;
+    margin-bottom: -7px;
+}
+.cell24{
+    grid-area: x;
+    margin-bottom: -7px;
+    margin-right: -7px;
+    margin-left: -7px;
+    background-color: #f0c251;
+
+}
+.cell25{
+    grid-area: y;
+    margin-top: -7px;
+    margin-right: -7px;
+}
+.cell26{
+    grid-area: z;
+    background-color: #d63f25;
+    margin-top: -7px;
+margin-left: -7px;
+}
+
+.cell27{
+    grid-area: yy;
+    margin-top: -7px;
+
+}
+
+.cell28{
+    grid-area : zz;
+    margin-right: -7px;
+    margin-top: -7px;
+    background-color: #f0c251;
+}

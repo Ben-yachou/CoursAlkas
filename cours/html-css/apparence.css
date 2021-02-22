@@ -1,0 +1,110 @@
+.solid-border {
+    /* pour définir une bordure à un élément il suffit de préciser border suivi 
+    de la taille de la bordure, son style puis sa couleur */
+    border: 1px solid red;
+}
+
+.dashed-border {
+    /* si on veut définir chaque propriété de la bordure séparément c'est également possible */
+    border-width: 5px;
+    border-style: dashed;
+    border-color: green;
+}
+
+.dotted-border {
+    /* il est aussi possible de préciser une partie avec border une autre avec une propriété spécifique */
+    border: 5px blue;
+    border-style: dotted;
+}
+
+.text-shadow {
+    padding: 10px;
+    /* définir une ombre se fait en plusieurs parties
+    d'abord définir le décalage de l'ombre par rapport au texte
+    en premier le décalage en x, ensuite le décalage y 
+    ensuite on définit le niveau de diffusion de l'ombre (l'effet de flou) sous la forme d'un rayon
+    puis enfin la couleur
+    la syntaxe complète est donc
+    text-shadow : x y radius color*/
+    text-shadow: 2px 2px 5px black;
+}
+
+.states {
+    margin: 10px;
+}
+
+.states a {
+    padding: 10px;
+    margin: 10px;
+}
+/* 
+pour aider à la selection il existe ce qu'on appelle des pseudo classes, ces pseudos classes
+précédées d'un : permettent de préciser des conditions supplémentaires à la selection en css
+a:nth-child(n) permet de selectionner l'enfant n de type a dans un conteneur
+ex: a:nth-child(n) selectionne les premiers éléments "a" dans chaque conteneur */
+.states a:nth-child(1){
+    background-color: yellow;
+
+}
+
+/* on peut enchainer les pseudos classes comme ceci
+la pseudo classe :hover permet de définir les propriétés css
+d'un élément seulement pour l'instant ou il est survolé par le curseur */
+.states a:nth-child(1):hover{
+    background-color: pink;
+    color: aliceblue;
+}
+
+
+.states a:nth-child(2){
+    background-color: bisque;
+}
+
+/* :active se comporte comme hover mais pour le clic
+:active est utilisé lorsque l'on reste appuyé sur un élément à l'aide du clic */
+.states a:nth-child(2):active{
+    background-color: green;
+    color: yellow;
+}
+
+
+.states a:nth-child(3){
+    background-color: azure;
+}
+
+/* :focus quant à lui est utilisé lorsque le navigateur selectionne l'élément
+que ce soit a l'aide de la souris (clic) ou autre (ex: tab, lecteur d'écran...) */
+.states a:nth-child(3):focus{
+    background-color: indianred;
+}
+
+/* :visited sert pour les liens
+lorsqu'un lien est déjà visité sa couleur change par défault de bleu à violet
+on peut changer la couleur d'un lien visité de cette façon par exemple */
+
+.states a:nth-child(4):visited{
+    color: red;
+}
+
+/* pour définir un fond pour un élément à base d'image
+on peut utiliser background-image */
+.background-image{
+    height: 300px;
+    background-image: url(img/background.jpg);
+    /* background-size permet de définir la taille de notre fond
+    si on définit le fond à "cover" par exemple, l'image conservera l'aspect ratio en prenant
+    le plus de place possible, quitte à être coupée
+    d'autres comportements sont disponibles
+    on peut aussi préciser une taille en pixels ou en pourcentages */
+    background-size: cover;
+}
+
+
+.background-gradient{
+    height: 300px;
+    /* on peut définir un dégradé de couleur en tant qu'image de fond
+    pour ça il faut utiliser la fonction linear-gradient(angle, couleur1, couleur2...)
+     */
+    background-image: linear-gradient(45deg, blue, green, red);
+
+}

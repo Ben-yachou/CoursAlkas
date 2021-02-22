@@ -1,0 +1,26 @@
+.advert {
+    margin: 15px;
+}
+
+.advert-actions {
+    padding: 15px;
+}
+
+.advert-actions > a {
+    padding: 5px;
+    color: white;
+}
+
+.advert-button-edit {
+    background-color: blue;
+}
+
+.advert-button-delete{
+    background-color: red;
+}
+
+.flash-success {
+    padding: 15px;
+    background-color: green;
+    color: white;
+}

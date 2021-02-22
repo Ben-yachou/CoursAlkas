@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Espace personnel
+{% endblock %}
+
+{% block body %}
+    {% if app.user %}
+        <h1>
+            Bienvenue
+            {{app.user.username}}
+            ! Prêt à commettre un pêché capital ?
+        </h1>
+    {% endif %}
+
+    <h3>Quelques candidats :
+    </h3>
+    <div class="user-pool">
+        {{dump(users)}}
+        {% for user in users %}
+            {% if app.user != user %}
+                <a href="{{path('user_view', {id: user.id})}}">{{ user.username }}</a>
+                {{ user.getAge }}
+                <div class="user-image">
+                    <img src="{{asset('image_upload/' ~ user.profilePic) }}" alt="{{user.username}}'s picture">
+                </div>
+                <a href="{{ path('relation_request', {id: user.id}) }}">Entamer une relation</a>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <h3>Requêtes envoyées :
+    </h3>
+    <div class="requests-sent">
+        {% for request in requestsSent %}
+            Envoyée le :
+            {{request.dateSent | date("d à h:i:s")}}
+            à :
+            {{request.receiver.username}}
+            statut :
+            {{ request.isAccepted ? "oui" : "en attente" }}
+        {% endfor %}
+    </div>
+
+    <h3>Requêtes reçues :
+    </h3>
+    <div class="requests-received">
+        {% for request in requestsReceived %}
+        <div class="request-container">
+            <span class="sent-info">Envoyée le :
+            {{request.dateSent | date("d à h:i:s")}}
+            par :
+            </span>
+            <span class="request-username">{{request.sender.username}}</span>
+            
+            {% if request.isAccepted %}
+                <span class="request-accepted">Acceptée</span>
+            {% else %}
+            <div class="request-action">
+                <a href="{{ path('accept_request', {id: request.id}) }}">Accepter</a>
+                -
+                <a href="{{ path('deny_request', {id: request.id}) }}">Refuser</a>
+            </div>
+                {% endif %}
+
+        </div>
+    
+        {% endfor %}
+    </div>
+
+
+    <h3>Relations ouvertes :
+    </h3>
+    <div class="relations">
+        {% for relation in relations %}
+            {{relation.userB.username}}
+        {% endfor %}
+        {% for relation in relationsB %}
+            {{relation.userA.username}}
+        {% endfor %}
+    </div>
+
+    <h3>Conversations: </h3>
+    <div class="conversations">
+        {% for conversation in conversations %}
+            <a href="{{path('conversation', {id: conversation.id})}}">Discuter</a>
+            avec {% if conversation.userA != app.user %}
+                {{conversation.userA.username}}
+            {% endif %}
+            {% if conversation.userB != app.user %}
+                {{conversation.userB.username}}
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}
+

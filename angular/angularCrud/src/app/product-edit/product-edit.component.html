@@ -1,0 +1,27 @@
+<h1>Edit Product</h1>
+<div class="card">
+    <div *ngIf="product" class="card-body">
+        <div class="form-group">
+            <label class="col-md-4">Product Name</label>
+            <input [(ngModel)]="product.productName" type="text" class="form-control" #productName>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4">Product Description</label>
+            <input [(ngModel)]="product.productDescription" type="text" class="form-control" #productDescription>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4">Product Price</label>
+            <input [(ngModel)]="product.productPrice" type="number" class="form-control" #productPrice>
+        </div>
+        <div class="form-group">
+            <button
+                (click)="updateProduct(product._id, 
+                                    product.productName, 
+                                    product.productDescription, 
+                                    product.productPrice)"
+                class="btn btn-primary">
+                Update Product
+            </button>
+        </div>
+    </div>
+</div>

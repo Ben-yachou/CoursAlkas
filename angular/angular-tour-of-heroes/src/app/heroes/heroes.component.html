@@ -1,0 +1,24 @@
+<h2>My Heroes</h2>
+
+<div>
+    <label> New Hero Name : 
+        <!-- #heroName permet d'assigner un identifiant au champ
+        input au niveau d'angular -->
+        <input #heroName/>
+    </label>
+    <!-- on peut ainsi réutiliser heroName dans notre event click-->
+    <!-- on remet le champ à zéro en mettant la value de heroName à ''-->
+    <button (click)="addHero(heroName.value); heroName.value=''">Add Hero</button>
+</div>
+
+<ul class="heroes">
+    <!-- on crée un élement li par hero dans la liste heroes
+    à l'aide de *ngFor -->
+    <li *ngFor="let hero of heroes">
+        <a routerLink="/detail/{{hero.id}}">
+            <span class="badge">{{ hero.id }}</span>
+            <span>{{hero.name}}</span>
+        </a>
+        <button (click)="deleteHero(hero)">X</button>
+    </li>
+</ul>

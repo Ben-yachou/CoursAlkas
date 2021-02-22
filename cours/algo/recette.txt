@@ -1,0 +1,41 @@
+Recette cuireDesPates: //camelCase
+
+INGREDIENTS :
+    pates
+    sel
+    eau
+    huileOlive
+
+USTENSILES :
+    casserole
+    passoire
+    cuillere
+    assiette
+
+VARIABLES:
+    tempsDeCuisson = 7min
+    quantiteSel = 3cac
+
+DEBUT
+    tant que casserole non pleine :
+        verser eau dans casserole 
+    fin tant que
+
+    placer casserole sur le bruleur
+    allumer le feu 
+    
+    verser $quantiteSel de sel dans l'eau
+
+    tant que temperature de l'eau differente de 100°C
+        ne rien faire 
+    fin tant que 
+
+    placer 200g de pates dans la casserole 
+    attendre $tempsDeCuisson
+    couper le feu
+    placer passoire dans evier
+    
+    tant que casserole non vide
+        verser contenu casserole dans passoire 
+    fin tant que
+FIN

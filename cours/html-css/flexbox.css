@@ -1,0 +1,58 @@
+/* affichons nos blocs dans nos conteneurs et donnons leur une taille */
+.conteneur div {
+    color: white;
+    border: 1px solid black;
+}
+
+/* notre conteneur est celui qui est ciblé par flexbox */
+.conteneur {
+    height: 200px;
+ 
+    background-color: aquamarine;
+    
+    /* display flex permet de transformer le conteneur en un conteneur flexbox */
+    display: flex;
+    /* align-items permet de spécifier la façon de s'aligner sur l'axe secondaire */
+    align-items: center;
+    /* justify-content permet de spécifier la façon de s'aligner sur l'axe principal */
+    justify-content: center;
+
+    /* préciser flex-wrap: wrap; permet à flexbox de déplacer le contenu à ligne 
+    si le conteneur devient trop etroit */
+    flex-wrap: wrap;
+}
+
+#conteneur1{
+    /* change l'axe principal des elements */
+    flex-direction: column;
+}
+
+#conteneur2{
+    /* change l'axe principal des elements */
+    flex-direction: row; 
+}
+
+.bloc {
+    min-width: 200px;
+    min-height: 20px;
+}
+
+.bloc1 {
+    background-color: red;
+}
+
+.bloc2{
+    background-color: blue;
+}
+
+.bloc3{
+    background-color: green;
+}
+
+.bloc4{
+    background-color: yellow;
+}
+
+.bloc5{
+    background-color: purple;
+}

@@ -1,0 +1,25 @@
+//Additionne les nombres pairs d'une liste de nombres 
+//Renvoie un nombre
+ALGORITHME additionnerPairs(listeNombres):nombre
+ENTREE:
+    listeNombres: liste de nombres
+VARIABLES:
+    resultat: un nombre 
+    i : un nombre
+
+DEBUT
+    resultat = 0
+    i = 0
+    //taille(listeNombres) renvoie la taille de listeNombres
+    TANTQUE i < taille(listeNombres) FAIRE
+        nombre = listeNombres[i] //listeNombres[i] veut dire l'element de listeNombres se trouvant a l'indice i
+        SI  nombre%2 == 0 ALORS
+            resultat = resultat + nombre
+        FINSI
+        i = i + 1 //incrementation, on ajoute 1 à notre index
+    FINTANTQUE
+    RENVOYER resultat
+FIN 
+
+// 0  1  2  3   4   5   6   7
+//[1, 4, 2, 10, 75, 12, 6, -7] length = 8

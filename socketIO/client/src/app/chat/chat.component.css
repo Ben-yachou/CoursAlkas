@@ -1,0 +1,30 @@
+.chat {
+    display: flex;
+    flex-direction: column;
+}
+
+.message-container{
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+}
+
+.message-container > span:nth-child(even){
+    background-color: ghostwhite;
+}
+
+.main-container{
+    display: flex;
+}
+
+.message-container {
+    width: 80vw;
+}
+
+.input-container {
+    width: 100%;
+}
+
+#message-input {
+    width: 90%;
+}

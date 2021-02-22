@@ -1,0 +1,115 @@
+/* affichons nos blocs dans nos conteneurs et donnons leur une taille */
+
+.conteneur div {
+    color: white;
+    border: 1px solid black;
+}
+
+/* notre conteneur est celui qui sera ciblé par grid css */
+
+/* on définit d'abord le layout prévu pour les petits écrans */
+
+.conteneur {
+    height: 500px;
+    background-color: aquamarine;
+    /* on précise qu'on utilise grid css */
+    display: grid;
+    /* grid-template-rows et columns permet de définir le nombre */
+    /* de colonnes et lignes de notre grille ainsi que leurs tailles respectives */
+    /* l'unité fr désigne une fraction de la page */
+    /* 1fr 2fr pour les colonnes signifie que notre grid css sera séparée en 3 fractions
+        et que la colonne 1 en prendra une, la colonne 2 en prendra 2  */
+    /*repeat est une fonction raccourcie permettant 
+        de mettre en place nos colonnes et lignes facilement
+        en spécifiant combien de fois on doit répéter une même fraction
+        repeat(n, x) répète donc n fois la taille x*/
+    /* on définit le contenu sur une seule colonne */
+    grid-template-columns: 1fr;
+    /* et on définit 6 lignes pour notre layout */
+    grid-template-rows: repeat(6, 1fr);
+    /* sur grid-template-areas on se contente de définir le contenu de cette façon */
+    grid-template-areas: 
+    "b" 
+    "a" 
+    "c" 
+    "c" 
+    "d" 
+    "e";
+    grid-gap: 5px;
+}
+
+.bloc1 {
+    background-color: red;
+    grid-area: a;
+}
+
+.bloc2 {
+    background-color: blue;
+    grid-area: b;
+    font-size: 3rem;
+}
+
+.bloc3 {
+    background-color: green;
+    grid-area: c;
+}
+
+.bloc4 {
+    background-color: yellow;
+    grid-area: d;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bloc4 > article {
+    background-color: white;
+    color: black;
+    width: 80%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bloc4 > article > p {
+    background-color: green;
+    width: 80%;
+}
+
+.bloc5 {
+    background-color: purple;
+    grid-area: e;
+}
+
+/* une media query permet de spécifier de nouvelles propriétés css qui ne s'activent
+que si des conditions sont respectées 
+ex: ici on n'active les propriétés css de .conteneur suivantes que si l'écran a une largeur de 740px ou plus*/
+@media screen and (min-width: 740px) {
+    .conteneur {
+        /* 4 colonnes*/
+        grid-template-columns: repeat(4, 1fr);
+        /*4 lignes*/
+        grid-template-rows: repeat(4, 1fr);
+        /* grid-template-areas permet de définir de façon 
+        graphique des zones dans notre grid css
+        pour pouvoir déterminer la taille et la position de chacun des blocs
+        en affublant un bloc d'une zone, ce bloc va donc occuper la zone
+        telle que définie dans grid-template-areas 
+        grid-template-areas permet de définir ces zones en utilisant
+        des mots contigus, un même mot répété sur plusieurs lignes/colonnes
+        permet de définir une zone*/
+        grid-template-areas: 
+        "a b b b" 
+        "c d d d" 
+        "c d d d" 
+        "c e e e";
+        /* spécifie un espacement entre chaque element de grille */
+        grid-gap: 5px;
+    }
+
+    .bloc2{
+        font-size: 5rem;
+    }
+}

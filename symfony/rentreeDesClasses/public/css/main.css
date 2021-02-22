@@ -1,0 +1,66 @@
+body {
+    width: 100%;
+}
+
+.conversation {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.message {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5%;
+}
+
+.sender {
+    align-self: end;
+}
+
+.sender > .message {
+    background-color: #76d3eb;
+}
+
+.receiver > .message {
+    background-color: #eeeeee;
+}
+
+.receiver {
+    align-self: start;
+}
+
+.message-time {
+    color: grey;
+    font-size: small;
+}
+
+.user-card {
+    display: flex;
+    box-shadow: 1px 1px 1px 1px black;
+    align-items: center;
+}
+
+.user-card > * {
+    margin: 10px;
+}
+
+.user-card > .info {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-card > .info > .profile-pic {
+    height: 150px;
+    width: auto;
+}
+
+.user-card > .info > .profile-pic > img {
+    height: 100%;
+    width: auto;
+}

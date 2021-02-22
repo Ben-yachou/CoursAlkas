@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdvertController!{% endblock %}
+
+{% block body %}
+    Page d'accueil
+    {% for message in app.flashes('success') %}
+        <div class="flash-success">
+            {{message}}
+        </div>
+    {% endfor %}
+    {% for advert in adverts %}
+        <div class="advert">
+            <a href="{{ path('advert_view', {'id': advert.id}) }}">
+                {{ advert.title }}
+            </a>
+            <p>
+                {{ advert.content }}
+            </p>
+            <em>Par {{advert.author}} le {{ advert.date|date('d/m/Y') }}</em>
+            <div class="advert-actions">
+                <a class="advert-button-edit" href="{{ path('advert_edit', {'id' : advert.id}) }}">Editer</a>
+                <a class="advert-button-delete" href="{{ path('advert_delete', {'id' : advert.id}) }}">Supprimer</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

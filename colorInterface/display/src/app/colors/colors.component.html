@@ -1,0 +1,25 @@
+<div class="palette">
+    <div class="color" [style.background]="color1"></div>
+    <div class="color" [style.background]="color2"></div>
+    <div class="color" [style.background]="color3"></div>
+    <div class="color" [style.background]="color4"></div>
+    <div class="color" [style.background]="color5"></div>
+    <div class="color" [style.background]="color6"></div>
+</div>
+
+
+<div [style.background]="containerBackground" class="container">
+    <div #imageContainer class="image-container">
+        <img src="{{imageUrl}}">
+    </div>
+
+    <div class="text-container">
+        <h1 [style.color]="titleColor">Title</h1>
+        <h3 #subtilte>Subtitle</h3>
+        <p #body>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed error iusto pariatur beatae excepturi tempora
+            alias consequuntur repudiandae voluptatem minima! Minima tenetur reiciendis tempore voluptas molestias
+            impedit odit nulla debitis.
+        </p>
+    </div>
+</div>

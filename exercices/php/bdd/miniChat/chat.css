@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    width: 80%;
+}
+
+ul li:nth-child(even) {
+    background-color : #e3f2fd;
+}
+
+ul li:nth-child(odd) {
+    background-color: #90caf9;
+}
+
+ul span {
+   font-weight: bold; 
+}

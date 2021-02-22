@@ -1,0 +1,56 @@
+<h1>Add Product</h1>
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="addForm">
+            <div class="form-group">
+                <label class="col-md-4">Product Name</label>
+                <input type="text" class="form-control" formControlName="productName" #productName>
+            </div>
+
+            <div *ngIf="addForm.controls['productName'].invalid &&
+                        addForm.controls['productName'].touched">
+                <div *ngIf="addForm.controls['productName'].errors.required" class="alert alert-danger">
+                    Product Name is Required
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4">Product Description</label>
+                <input type="text" class="form-control" formControlName="productDescription" #productDescription>
+            </div>
+
+            <div *ngIf="addForm.controls['productDescription'].invalid &&
+                        addForm.controls['productDescription'].touched">
+                <div *ngIf="addForm.controls['productDescription'].errors.required" class="alert alert-danger">
+                    Product Description is Required
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4">Product Price</label>
+                <input type="number" class="form-control" formControlName="productPrice" #productPrice>
+            </div>
+
+            <div *ngIf="addForm.controls['productPrice'].invalid &&
+                        addForm.controls['productPrice'].touched">
+                <div *ngIf="addForm.controls['productPrice'].errors.required" class="alert alert-danger">
+                    Product Price is Required
+                </div>
+                <div *ngIf="addForm.controls['productPrice'].errors.min" class="alert alert-danger">
+                    Price needs to be higher than 0
+                </div>
+            </div>
+
+            <div class="form-group">
+                <a type="button" *ngIf="addForm.valid"
+                    (click)="addProduct(productName.value, productDescription.value, productPrice.value)"
+                    class="btn btn-primary">
+                    Add Product
+                </a>
+                <a *ngIf="addForm.invalid" class="btn btn-primary disabled">
+                    Add Product
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

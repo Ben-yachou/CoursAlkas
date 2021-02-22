@@ -1,0 +1,105 @@
+/* le selecteur en css permet de choisir quel élément sera modifié */
+body {
+    /* background color définit la couleur de fond de l'element selectionné */
+    background-color: antiquewhite;
+    /* font family permet de définir le type de police d'écriture dans l'élément selectionné */
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Fredericka the Great', cursive;
+    /* font weight permet de définir le "poids" d'une police, typiquement pour rendre du texte gras (bold) */
+    font-weight: normal;
+    /* font size permet  de changer la taille de police */
+    /* l'unité rem permet de définir une taille en fonction de la taille de base du document */
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-style: italic;
+}
+
+h5{
+    
+    font-style: oblique;
+    /* color permet de définir la couleur du texte dans un élément  */
+    color: crimson;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+main > section {
+    margin: 5px;
+    /* padding permet de définir les marges interieures de notre element  */
+    padding: 5px 5px 5px 20px;
+    background-color: rgb(251, 239, 224);
+    /* préciser une border permet d'ajouter une bordure a notre element  
+    préciser la direction permet de définir sur quelle bord la bordure s'affichera */
+    border-left : 1px solid red;    
+}
+
+/* séparer les elements par un espace permet de selectionner plus précisemment un élément
+par exemple dire nav ul signifie "elements ul contenus dans un element nav" */
+nav ul {
+    list-style: none;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* spécifier :hover permet d'indiquer à css les propriétés à appliquer lorsqu'on passe la souris (survole) sur l'élèment */
+nav li a:hover {
+    background-color: rgb(1, 184, 184);
+}
+
+
+nav li a {
+    padding: 5px;
+    background-color: teal;
+    color: white;
+    text-decoration: none;
+}
+
+em {
+    color: rgb(68, 68, 68);
+}
+
+.bleu {
+    background-color: blue;
+}
+
+.rouge {
+    background-color: red;
+}
+
+#competences_contenu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#competences_contenu section {
+    min-width: 33%;
+}
+
+@media screen and (max-width: 640px){
+    #competences_contenu section{
+        min-width: 100%;
+    }
+}
+
+@media screen and (min-width: 640px) and (max-width: 970px){
+    #competences_contenu section{
+        min-width: 50%;
+    }
+}

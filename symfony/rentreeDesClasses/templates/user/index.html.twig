@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{user.username}} - Profil{% endblock %}
+
+{% block body %}
+    <h1>{{user.username}}</h1>
+    <img src="{{asset('image_upload/'~ user.profilePic)}}" alt="{{user.username}}'s picture">
+    <div class="infos">
+        <span>{{user.gender}}</span>
+        <span>{{user.getAge}}</span>
+    </div>
+    <div class="description">
+        <p>{{user.description}}</p> 
+    </div>
+{% endblock %}

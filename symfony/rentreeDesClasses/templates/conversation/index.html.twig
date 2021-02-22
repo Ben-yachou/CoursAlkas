@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ConversationController!
+{% endblock %}
+
+{% block body %}
+
+    <h2>Conversation avec
+        {{interlocutor.username}}:</h2>
+
+    <div class="conversation">
+        {% for message in messages %}
+            <div class="message_container {% if message.sender == app.user %}sender{%else%}receiver{%endif%}">
+                <span class="message-time">{{message.time | date('h:i')}}</span>
+                <div class="message">
+                    {{message.content}}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    {{form(form)}}{% endblock %}

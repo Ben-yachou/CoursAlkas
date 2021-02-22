@@ -1,0 +1,28 @@
+.palette {
+    display: flex;
+}
+
+.color {
+    height: 100px;
+    width: 100px;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+}
+
+.image-container {
+    width: 250px;
+    height: 300px;
+}
+
+.image-container > img {
+    width: 100%;
+    height: auto;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Visualiser Annonce{% endblock %}
+
+{% block body %}
+    {% if advert is not null %}
+    {% for message in app.flashes('success') %}
+        <div class="flash-success">
+        {{message}}
+        </div>
+    {% endfor %}
+    <div>
+        {{ advert.id }}
+        {{ advert.title }}
+        <p>
+        {{advert.content}}
+        </p>
+        <em> Par {{ advert.author }} le {{ advert.date|date('d/m/Y') }} </em>
+    </div>
+    {% else %}
+        <div> Aucune annonce disponible avec cet id </div>
+    {% endif %}
+{% endblock %}

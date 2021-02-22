@@ -1,0 +1,65 @@
+/* affichons nos blocs dans nos conteneurs et donnons leur une taille */
+.conteneur div {
+    color: white;
+    border: 1px solid black;
+}
+
+/* notre conteneur est celui qui sera ciblé par grid css */
+.conteneur {
+    height: 600px;
+    background-color: aquamarine;
+    
+    /* display: grid indique au conteneur d'utiliser les règles de grid css  */
+    display: grid;
+    /* grid-template-rows et columns permet de définir le nombre */
+    /* de colonnes et lignes de notre grille ainsi que leurs tailles respectives */
+    /* l'unité fr désigne une fraction de la page */
+    /* 1fr 2fr pour les colonnes signifie que notre grid css sera séparée en 3 fractions
+    et que la colonne 1 en prendra une, la colonne 2 en prendra 2  */
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* 4 colonnes*/
+    grid-template-rows: 1fr 1fr 1fr 1fr; /*4 lignes*/
+    
+    /* spécifie un espacement entre chaque element de grille */
+    grid-gap: 5px;
+}
+
+
+.bloc1 {
+    background-color: red;
+}
+
+.bloc2{
+    background-color: blue;
+    /* pour spécifier l'etendue d'un element en colonne 
+    on utilise grid-column-start et end pour spécifier
+     le départ et la fin d'un élément dans notre grille */
+    /* grid-column-start: 2; part de colonne 2 */
+    /* grid-column-end: 4; s'arrête a la colonne 4 */
+
+    /* grid-column est un raccourci compilant les effets de 
+    grid-column-start et grid-column-end */
+    /* elle s'utilise de la façon suivante : 
+    grid-column: start / end; en remplaçant start et end 
+    par le numéro des colonnes 
+    on peut également utiliser le mot clé span n
+    pour indiquer que la colonne s'étale sur n colonnes*/
+    grid-column: span 2;
+    grid-row: span 2;
+
+}
+
+.bloc3{
+    background-color: green;
+}
+
+.bloc4{
+    background-color: yellow;
+}
+
+.bloc5{
+    background-color: purple;
+}
+
+.bloc12{
+    grid-column: span 1;
+}

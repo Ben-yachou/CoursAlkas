@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <!--Balise titre indispensable, doit être unique -->
+    <title>Bases du SEO - Le Blog de G@mer'sz's de Julien</title>
+
+    <!--
+    Balise très utile pour le referencement.  
+    La description permet d'indiquer à l'utilisateur ce que contient notre page
+    Elle doit idéalement faire un maximum de 150 caractères
+    Chaque description doit concerner la page présente uniquement et être du coup unique
+    -->
+    <meta name='description' content='Conseils pour appréhender les SEO en améliorant notre contenu. 
+                                        Des balises Meta à la sémantique, beaucoup de techniques sont mises en jeu.'>
+
+    <!-- author et copyright ont une utilité limitée mais peuvent entrer en compte parfois-->
+    <meta name="author" content="Julien Chièze">
+    <meta name="copyright" content="© Entreprisine . Inc">
+
+    <!--Les balises robots permettent de donner des instructions aux robots d'indexation -->
+    <!-- l'indexation se fait déjà par défaut, du coup les balises qui suivent sont
+    inutiles-->
+    <meta name="robots" content="index, follow, archive">
+    <!--cette ligne est équivalente à la précédente -->
+    <meta name="robots" content="all">
+
+    <!-- dans le cas où on aurait besoin d'empêcher l'indexation d'une page -->
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <!--la ligne suivante est équivalente a la précendete-->
+    <meta name="robots" content="none">
+    <!-- indexer des pages qui ne devraient pas être indexées 
+        (contenu illisible, purement fonctionnel etc..)
+        peut entrainer des pénalités de référencement 
+    -->
+
+    <!-- pour empêcher l'affichage d'un extrait de notre page ou de la description -->
+    <meta name="robots" content="nosnippet">
+
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <!-- Le plus important pour aider au referencement d'une page est que son contenu
+    soit unique, interressant et engageant -->
+    <!-- unique dans le sens ou votre page ne doit pas être multipliée sur votre site
+    interessant dans le sens où le contenu de la page correspond efficacement a son titre
+    sa description et son url
+    et engageant dans le sens où les utilisateurs restent sur la page,
+    et sur le site par la suite-->
+    <!-- Il faut essayer de faire coller le contenu à un set de mots clés 
+        ce qui correspond grosso modo a utiliser 3 ou 4 fois le set de mots clés
+        dans le contenu, ce qui permettra un meilleur referencement
+    Inutile d'essayer d'en abuser, il faut que le contenu soit organique et naturel-->
+    <!-- chaque page doit correspondre a un thème, chaque partie du contenu doit
+    suivre ce même thème, et si les thèmes sont bien cloisonnés entre chaque page
+    dans notre site alors le referencement sera meilleur-->
+
+    <!-- Utiliser un H1 comme titre contenant vos mots clés permet d'entamer ce referencement -->
+    <!-- H1 est UNIQUE-->
+    <h1>Mon super article sur le referencement, le SEO, et beaucoup de phrases approximatives </h1>
+
+    <section>
+        Du coup mon texte va contenir plein de choses sur le SEO, et même si on va tenter
+        d'éviter les phrases approximatives il faut bien en faire quelques une pour expliquer
+        comment fonctionne le referencement naturel.
+    </section>
+
+    <!-- si votre contenu est divisé en plusieurs sections séparez les avec des h2 et h3 etc
+    contenant le titre de la section concernée-->
+    <h2>Parlons du referencement</h2> <!-- des h2 on peut en avoir a balles-->
+    <section>
+        Ici je ne vais parler que du referencement et êut être un peu du reste
+        mais en gros le thème de cette section est majoritairement le referencement
+        et pas tellement le reste.
+    </section>
+
+    <h2>Le SEO c'est vraiment top </h2>
+    <section>
+        Les règles changent tous les jours, on sait pas tout le temps comment ça marche
+        et on avance pieds nus dans l'obscurité, un peu comme dans la vie.
+        <!-- Utiliser des liens intérieurs aide au referencement car les liens
+        interieurs (qui mènent a une autre page de notre site) aident à une navigation efficace
+        et les moteurs récompensent l'efficacité. 
+        Placer des liens sur des mots clés pour amener a du contenu est ue bonne pratique
+        il faudrait idéalement se trouver à 2 clics de n'importe quelle page du site-->
+        <!-- pour placer des liens il faut bien les intégrer au contenu
+        (les placer sur les mots clés concernés) -->
+        <!-- La phrase qui suit est nulle completement moisie, ne pas faire !!!!!-->
+        <a href="page3.html">Cliquez Ici</a> pour en savoir plus sur le CEO
+        <!-- la phrase au dessus est NULLE ne PAS FAIRE !!!!!!!!!!-->
+
+        <!-- la phrase qui suit est TOPISSIME c'est ENORME c'est ça qu'il faut faire !!!-->
+        Mon <a href="SEO.html">article sur le SEO</a> est déjà disponible !
+        <!-- la phrase au dessus est GENIALE-->
+
+        <h2>Beaucoup de phrases approximatives pour pas grand chose</h2>
+        <section>
+            Etant un être humain doté de capacités en communication limitées je me spécialise
+            dans les phrases approximatives. Je sais que c'est pas le mieux mais je fais ce que je peux.
+            merci à tous.
+        </section>
+
+        <!-- pour les images, utiliser une description dans l'attribut alt est 
+                            INDISPENSABLE
+        mais également utile et sensé. Le referencement sera meilleur et les logiciles
+        d'accessibilité pourront profiter du contenu purement pictural en cas d'utilisateur
+        malvoyants ou de terminaux incompatibles-->
+
+        <!-- nomer les images d'une façon descriptive sans utiliser de caractères spéciaux-->
+        <img src="image.png"> <!-- pas bon -->
+        <img src="oiseau_moche.png"> <!-- pas top -->
+        <img src="oiseau-moche.png"> <!-- mieux mais pas nickel -->
+        <img src="oiseau-moche.png" alt="Un oiseau super moche qui vole pas">
+        <!-- pour les images avec légende l'utilisation de figure et figcaption
+        est tout indiquée-->
+        <figure>
+            <img src="oiseau-moche.png" alt="un oiseau méga méga moche">
+            <figcaption>L'oiseau est moche parce qu'il ressemble à Isabelle Balkany</figcaption>
+        </figure>
+
+        <!-- un paragraphe correspond a environ 2/3 phrases. Les phrases doivent rester concises-->
+        <p>
+            <!-- bof, contient des phrases trop longues et en trop grand nombre -->
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, veritatis. Molestiae, deserunt placeat. At
+            saepe
+            aut odio iure.
+            Velit consequatur aliquam sed provident possimus quisquam repellat necessitatibus dolorem
+            doloribus voluptate.
+        </p>
+
+        <p>
+            <!-- mieux, les phrases sont courtes et le paragraphe reste concis-->
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Ut corporis rem deleniti vel, dolore porro laborum
+            facilis.
+        </p>
+        <p>
+            Incidunt eius eum accusamus laboriosam illum, doloribus asperiores atque accusantium. Minus, quaerat
+            magnam?
+        </p>
+
+        <!-- si du contenu se sépare en plusieurs catégories dans un même thème utiliser une liste
+        (ul.. etc)-->
+        <!-- ne pas abuser de tout ce qui est italique (em) gras etc etc -->
+</body>
+
+</html>

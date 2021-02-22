@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<!-- le contenu des balises head permet d'envoyer des informations au navigateur concernant notre page-->
+
+<head>
+    <!-- les balises meta permettent de définir certaines métadonnées de notre page -->
+    <!-- l'attribut charset permet de définir le set de caractères (ici utf-8, donc universel) utilisé par notre page -->
+    <meta charset="utf-8">
+    <!-- <title> permet de définir le titre de notre page, qui apparaitra en titre d'onglet dans le navigateur -->
+    <title>Jones - Développeur de renom</title>
+    <!-- les balises <link> permettent de lier une page, typiquement une page css, à notre page HTML -->
+    <!-- ici la feuille de style appelée est celle de Google Fonts permettant d'ajouter une police à notre site -->
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Montserrat" rel="stylesheet">
+    <!-- Ici la feuille de style appelée et appliquée est celle que nous codons, notre feuille cs personnalisée -->
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+</head>
+
+<!-- body définit le corps de notre page, il contient tout le contenu visuel de notre site internet-->
+
+<body>
+    <!-- header est un bloc de contenu typiquement prévu pour contenir les titres de notre page 
+    -->
+    <header>
+        <img src="img/index.jpg" alt="Photo de Jones" />
+        <!-- <h1> permet de définir un titre -->
+        <h1>Jones</h1>
+        <!-- en changeant le numéro a côté de h on change l'importance du titre, 1 étant le plus important
+        et 6 le moins important -->
+        <h3>Développeur Officiel du Pape</h3>
+    </header>
+    <!-- nav désigne typiquement le bloc de navigation, qui contiendra donc des liens -->
+    <nav>
+        <!-- ul définit un bloc de liste non ordonnée -->
+        <ul>
+            <!-- li définit un list item, un objet de liste -->
+            <!-- a permet de définir une ancre, un lien, vers une autre ressource-->
+            <!-- que ce soit un endroit de la page définit par un id ou une autre page, ou même un site externe -->
+            <!-- pour définir vers quelle ressource le lien va pointer, on utilise l'attribut href-->
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#presentation">Présentation</a></li>
+            <li><a href="#competences">Compétences</a></li>
+            <li><a href="#experience">Expérience</a></li>
+            <li><a href="#diplomes">Diplômes</a></li>
+            <li><a href="projets.html">Projets</a></li>
+            <li><a href="https://www.nasa.gov">Association</a></li>
+        </ul>
+    </nav>
+
+    <!-- la balise main définit le bloc de contenu principal de notre page -->
+    <main>
+        <!-- section définit une sous section de notre contenu -->
+        <!-- l'attribut id permet d'attribuer un identifiant unique a un élément permettant de le cibler plus tard
+        que ce soit dans un  lien (<a href="#identifiant">) ou en css (#identifiant)-->
+        <section id="presentation">
+            <h5>Qui est Jones ?</h5>
+            <!--p définit un paragraphe de texte -->
+            <p>
+                Né dans la carcasse d'une voiture en flammes en l'an 780, Jones a depuis son plus jeune âge développé
+                pour les plus grands.
+                Ses employeurs ont été, parmi tant d'autres, Charlemagne, le Pape Urbain 2...
+            </p>
+        </section>
+        <section id="competences">
+            <section id="competences_description">
+                <h5>Quelles sont ses compétences ?</h5>
+                <p> Multi-disciplinaire, Jones excelle dans une infinité de domaines.</p>
+
+            </section>
+            <section id="competences_contenu">
+                <section id="webdev">
+                    <h2>Développement Web</h2>
+                    <ul>
+                        <li>HTML/CSS</li>
+                        <li>Javascript</li>
+                        <li>Php</li>
+                        <li>Mysql</li>
+                    </ul>
+
+                </section>
+                <section id="medecine">
+                    <h2>Médecine</h2>
+                    <ul>
+                        <li>Neurochirurgie</li>
+                        <li>Phrénologie</li>
+                        <li>Endocrinologie</li>
+                    </ul>
+
+                </section>
+
+                <section id="lettres">
+                    <h2>Lettres</h2>
+                    <ul>
+                        <li>Lu un bouquin déjà</li>
+                        <li>Écrit un bouquin aussi déjà</li>
+                    </ul>
+                </section>
+            </section>
+
+        </section>
+
+        <section id="experience">
+            <h5>Quelle est son expérience ?</h5>
+            <p>Jones a bossé dans tous les secteurs les plus préstigieux du monde, y compris le McDonald's de
+                Saint-Martin-en-Luze</p>
+            <ul>
+                <!-- mark permet de mettre en valeur un contenu dans un contexte 
+                même chose pour strong et em
+                la première différence visible entre les trois est que strong met le texte en gras
+                mark le surligne
+                et em le place en italique-->
+                <li><mark>814</mark> Développeur Web, mise en ligne du <strong>Site Pour Les Funérailles </strong>de
+                    <em>Charlemagne</em></li>
+                <li><mark>1095</mark> Développeur officiel du Pape, responsable de la <strong>Page D'Accueil de La
+                        Première Croisade</strong> pour <em>Urbain 2</em></li>
+                <li><mark>1789 - 1804</mark> Développeur Web, <em>Mairie de Paris</em> </li>
+            </ul>
+        </section>
+
+        <section id="diplomes">
+            <h5>A-t-il des diplômes ?</h5>
+            <p>Jones est titulaire de plusieurs diplômes, certains ayant même été créés pour lui.</p>
+            <ol>
+                <li><mark>BEP Commerce</mark> option vente - <em>Lycée Général Jean Marxouin Clermont-Ferrand</em></li>
+                <li><mark>Licence de Physique</mark> - <em>Faculté des sciences Sofia Antipolis</em></li>
+                <li><mark>Master en Puissance Physique Quasi-Divine</mark> - <em>Mont Olympe</em></li>
+            </ol>
+        </section>
+    </main>
+    <!-- footer définit le pied de page -->
+    <footer>
+        <a href="#">Retourner en haut</a>
+    </footer>
+</body>
+
+</html>

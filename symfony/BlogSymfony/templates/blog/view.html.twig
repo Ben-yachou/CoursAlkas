@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{article.title}} - {{parent()}}
+{% endblock %}
+
+{% block body %}
+    <img src="{{ asset('uploads/image/' ~ article.image)}}"/>
+    <h2>
+        {{article.title}}
+    </h2>
+    <p>
+        {{article.content}}
+    </p>
+    <em> Par {{article.author.username}} le {{article.submitDate | date('d/m/Y H:i:s')}} </em>
+    
+    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+    <div>
+        {{ render(controller('App\\Controller\\BlogController::comment', { 'article' : article })) }}
+    </div>
+    {% endif %}
+
+    <h4>Commentaires de l'article : </h4>
+    {% for comment in comments %}
+        <p>
+        {{comment.author.username}}
+        {{comment.content}}
+        </p>
+    {% endfor %}
+{% endblock %}

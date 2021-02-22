@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!
+{% endblock %}
+
+{% block body %}
+    {% for user in users %}
+        <div class="user-card">
+            <div class="info">
+                <div class="profile-pic">
+                    <img src="{{ asset('image_upload/') }}{{ user.profilePic }}">
+                </div>
+                <h3 class="username">{{ user.username }}</h3>
+                <span class="user-gender">{{ user.gender }}</span>
+                <span class="age">{{ user.getAge }}</span>
+                <div class="user-location">
+                    <span class="country">{{ user.country }}</span>
+                    <span class="city">{{ user.city }}</span>
+                </div>
+            </div>
+            <div class="description">
+                {{user.description}}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
+

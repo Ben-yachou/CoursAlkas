@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Accueil - {{parent()}}
+{% endblock %}
+
+{% block body %}
+    {% for article in articles %}
+    <h2>
+        <a href="{{ path('blog_view', {'id' : article.id }) }}">{{article.title}}</a>
+    </h2>
+    <em> Par {{article.author.username}} le {{article.submitDate | date('d/m/Y H:i:s')}} </em>
+    <img height="50px" src="{{asset('uploads/image/' ~ article.image)}}"/>
+
+    {# si un utilisateur est connecté #}
+    {% if app.user %}
+        {# si l'utilisateur connecté est bien l'auteur de l'article #}
+        {% if article.author.username == app.user.username || is_granted('ROLE_ADMIN') %}
+            {# on affiche le bouton supprimer #}
+            <a href="{{path('blog_delete', {'id': article.id})}}">Supprimer</a>
+        {% endif %}
+    {% endif %}
+
+    {% endfor %}
+{% endblock %}

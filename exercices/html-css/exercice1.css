@@ -1,0 +1,99 @@
+body {
+    height: 100vh;
+}
+.container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: 
+    "header"
+    "nav"
+    "main"
+    "footer";
+}
+
+header {
+    text-align: center;
+    grid-area: header;
+    background-color: black;
+    color: white;
+}
+
+nav {
+    grid-area: nav;
+    width: 90%;
+    margin: 0 auto;
+}
+
+nav ul {
+    padding: 0;
+    text-align: center;
+}
+nav li{
+    display: inline-block;
+}
+
+nav a {
+    padding: 5px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color:  rgb(73, 73, 73);
+}
+
+main {
+    grid-area: main;
+}
+
+main > section {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+article {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+article:nth-of-type(1) {
+    margin-top: 25px;
+}
+
+article > section {
+    width: 80%;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+
+footer {
+    grid-area: footer;
+    background-color: black;
+    color: white;
+}
+
+footer ul {
+    padding: 0;
+    text-align: center;
+}
+footer li{
+    display: inline-block;
+}
+
+footer a {
+    color: white;
+    padding: 5px;
+    border: 1px solid white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    background-color: rgb(70, 70, 70);
+}

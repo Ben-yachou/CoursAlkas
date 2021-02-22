@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+nav {
+    background-color: blue;
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav-item {
+    background-color: white;
+}
+
+main {
+    background-color: yellow;
+    width: 80%;
+}
+
+article {
+    background-color: aqua;
+    display: flex;
+    margin-bottom: 5px;
+}
+
+article:first-of-type{
+    margin-top: 5px;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-container p {
+    width: 80%;
+    background-color: white;
+}
+
+footer {
+    background-color: black;
+    color: white;
+}

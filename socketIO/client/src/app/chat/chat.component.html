@@ -1,0 +1,38 @@
+<div class="chat">
+    Change nickname
+    <input  #nicknameChange />
+    <button (click)="sendNewNick(nicknameChange.value)">Change</button>
+    <div class="main-container">
+        <div class="message-container">
+            <span *ngFor="let message of messages">
+                {{message.user}} : {{message.message}}
+            </span>
+        </div>
+        <div class="connected-users">
+            <h4>Online</h4>
+            <ul>
+                <li *ngFor="let user of connectedUsers">
+                        {{user.nickname}}
+                </li>
+            </ul>
+
+            <h4>Offline</h4>
+            <ul>
+                <li *ngFor="let user of disconnectedUsers">
+                        {{user.nickname}}
+                </li>
+            </ul>
+        </div>
+        
+
+    </div>
+
+    <div *ngIf="userTyping" class="typing-message">
+        Someone is typing...
+    </div>
+    <div class="input-container">
+        <input (keyup.enter)="send(messageInput.value)" #messageInput id="message-input" />
+        <button (click)="send(messageInput.value)">Send</button>
+    </div>
+
+</div>
